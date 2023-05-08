@@ -35,8 +35,8 @@ export default new Command({
                         queue.get(interaction.guildId!!)!!.data.player?.stopTrack()
                         queue.get(interaction.guildId!!)!!.data.player?.playTrack({ track:playdata.track })
                         queue.get(interaction.guildId!!)!!.data.option.playNextOption = true;
-                        interaction.channel!!.send({embeds:[playdata.embed]}).catch();
-                        sendMessage!!.delete().catch();;
+                        await interaction.channel!!.send({embeds:[playdata.embed]})
+                        await sendMessage!!.delete()
                     }
                 })
                 sendMessage = await interaction.reply({embeds:[new EmbedBuilder().setColor(0xdbce39).setTitle(`${interaction.guild!!.name}의 재생목록`).setDescription(`**[현재 재생중]**\n▶️ | ${nowPlaying.name}\n\n**[재생목록]**\n${toplay.map((e,i)=>"`"+String(i+1)+"` | "+e.name).join("\n")}`)], components:[musiclist], fetchReply:true }).catch();
