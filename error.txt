@@ -1,0 +1,853 @@
+
+-----------------2023-04-18-28-----------------
+Error [TokenInvalid]: An invalid token was provided.
+    at Client.login (/home/shaper/문서/shapbot-canary/node_modules/discord.js/src/client/Client.js:214:52)
+    at Object.<anonymous> (/home/shaper/문서/shapbot-canary/app.ts:51:8)
+    at Module._compile (node:internal/modules/cjs/loader:1275:14)
+    at Module.m._compile (/usr/local/lib/node_modules/ts-node/src/index.ts:1618:23)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1329:10)
+    at Object.require.extensions.<computed> [as .ts] (/usr/local/lib/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1133:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:972:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:83:12)
+    at phase4 (/usr/local/lib/node_modules/ts-node/src/bin.ts:649:14)
+-----------------2023-04-18-02-----------------
+Error [DisallowedIntents]: Privileged intent provided is not enabled or whitelisted.
+    at WebSocketManager.createShards (/home/shaper/문서/shapbot-canary/node_modules/discord.js/src/client/websocket/WebSocketManager.js:250:15)
+    at async Client.login (/home/shaper/문서/shapbot-canary/node_modules/discord.js/src/client/Client.js:226:7)
+-----------------2023-04-18-03-----------------
+TypeError [ERR_HTTP_INVALID_HEADER_VALUE]: Invalid value "undefined" for header "User-Id"
+    at ClientRequest.setHeader (node:_http_outgoing:647:3)
+    at new ClientRequest (node:_http_client:286:14)
+    at request (node:http:98:10)
+    at get (node:http:109:15)
+    at initAsClient (/home/shaper/문서/shapbot-canary/node_modules/lavacord/node_modules/ws/lib/websocket.js:740:31)
+    at new WebSocket (/home/shaper/문서/shapbot-canary/node_modules/lavacord/node_modules/ws/lib/websocket.js:74:7)
+    at ws (/home/shaper/문서/shapbot-canary/node_modules/lavacord/src/lib/LavalinkNode.ts:109:24)
+    at new Promise (<anonymous>)
+    at LavalinkNode.connect (/home/shaper/문서/shapbot-canary/node_modules/lavacord/src/lib/LavalinkNode.ts:98:25)
+    at /home/shaper/문서/shapbot-canary/node_modules/lavacord/src/lib/Manager.ts:69:70
+-----------------2023-04-18-06-----------------
+TypeError [ERR_HTTP_INVALID_HEADER_VALUE]: Invalid value "undefined" for header "User-Id"
+    at ClientRequest.setHeader (node:_http_outgoing:647:3)
+    at new ClientRequest (node:_http_client:286:14)
+    at request (node:http:98:10)
+    at get (node:http:109:15)
+    at initAsClient (/home/shaper/문서/shapbot-canary/node_modules/lavacord/node_modules/ws/lib/websocket.js:740:31)
+    at new WebSocket (/home/shaper/문서/shapbot-canary/node_modules/lavacord/node_modules/ws/lib/websocket.js:74:7)
+    at ws (/home/shaper/문서/shapbot-canary/node_modules/lavacord/src/lib/LavalinkNode.ts:109:24)
+    at new Promise (<anonymous>)
+    at LavalinkNode.connect (/home/shaper/문서/shapbot-canary/node_modules/lavacord/src/lib/LavalinkNode.ts:98:25)
+    at /home/shaper/문서/shapbot-canary/node_modules/lavacord/src/lib/Manager.ts:69:70
+-----------------2023-04-18-21-----------------
+TypeError [ERR_HTTP_INVALID_HEADER_VALUE]: Invalid value "undefined" for header "User-Id"
+    at ClientRequest.setHeader (node:_http_outgoing:647:3)
+    at new ClientRequest (node:_http_client:286:14)
+    at request (node:http:98:10)
+    at get (node:http:109:15)
+    at initAsClient (/home/shaper/문서/shapbot-canary/node_modules/lavacord/node_modules/ws/lib/websocket.js:740:31)
+    at new WebSocket (/home/shaper/문서/shapbot-canary/node_modules/lavacord/node_modules/ws/lib/websocket.js:74:7)
+    at ws (/home/shaper/문서/shapbot-canary/node_modules/lavacord/src/lib/LavalinkNode.ts:109:24)
+    at new Promise (<anonymous>)
+    at LavalinkNode.connect (/home/shaper/문서/shapbot-canary/node_modules/lavacord/src/lib/LavalinkNode.ts:98:25)
+    at /home/shaper/문서/shapbot-canary/node_modules/lavacord/src/lib/Manager.ts:69:70
+-----------------2023-04-18-25-----------------
+TypeError [ERR_HTTP_INVALID_HEADER_VALUE]: Invalid value "undefined" for header "User-Id"
+    at ClientRequest.setHeader (node:_http_outgoing:647:3)
+    at new ClientRequest (node:_http_client:286:14)
+    at request (node:http:98:10)
+    at get (node:http:109:15)
+    at initAsClient (/home/shaper/문서/shapbot-canary/node_modules/lavacord/node_modules/ws/lib/websocket.js:740:31)
+    at new WebSocket (/home/shaper/문서/shapbot-canary/node_modules/lavacord/node_modules/ws/lib/websocket.js:74:7)
+    at ws (/home/shaper/문서/shapbot-canary/node_modules/lavacord/src/lib/LavalinkNode.ts:109:24)
+    at new Promise (<anonymous>)
+    at LavalinkNode.connect (/home/shaper/문서/shapbot-canary/node_modules/lavacord/src/lib/LavalinkNode.ts:98:25)
+    at /home/shaper/문서/shapbot-canary/node_modules/lavacord/src/lib/Manager.ts:69:70
+-----------------2023-04-18-27-----------------
+TypeError [ERR_HTTP_INVALID_HEADER_VALUE]: Invalid value "undefined" for header "User-Id"
+    at ClientRequest.setHeader (node:_http_outgoing:647:3)
+    at new ClientRequest (node:_http_client:286:14)
+    at request (node:http:98:10)
+    at get (node:http:109:15)
+    at initAsClient (/home/shaper/문서/shapbot-canary/node_modules/lavacord/node_modules/ws/lib/websocket.js:740:31)
+    at new WebSocket (/home/shaper/문서/shapbot-canary/node_modules/lavacord/node_modules/ws/lib/websocket.js:74:7)
+    at ws (/home/shaper/문서/shapbot-canary/node_modules/lavacord/src/lib/LavalinkNode.ts:109:24)
+    at new Promise (<anonymous>)
+    at LavalinkNode.connect (/home/shaper/문서/shapbot-canary/node_modules/lavacord/src/lib/LavalinkNode.ts:98:25)
+    at /home/shaper/문서/shapbot-canary/node_modules/lavacord/src/lib/Manager.ts:69:70
+-----------------2023-04-20-45-----------------
+Error: connect ECONNREFUSED 127.0.0.1:2333
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1532:16)
+-----------------2023-04-29-52-----------------
+Error [ERR_MODULE_NOT_FOUND]: Cannot find package 'app.ts' imported from /home/shaper/문서/shapbot-canary/modules/extras.ts
+    at new NodeError (node:internal/errors:399:5)
+    at packageResolve (node:internal/modules/esm/resolve:794:9)
+    at moduleResolve (node:internal/modules/esm/resolve:843:20)
+    at ESMLoader.defaultResolve (node:internal/modules/esm/resolve:1058:11)
+    at ESMLoader.resolve (node:internal/modules/esm/loader:323:32)
+    at ESMLoader.getModuleJob (node:internal/modules/esm/loader:172:38)
+    at ESMLoader.import (node:internal/modules/esm/loader:276:22)
+    at importModuleDynamically (node:internal/modules/cjs/loader:1205:37)
+    at importModuleDynamicallyWrapper (node:internal/vm/module:428:21)
+    at importModuleDynamically (node:internal/vm:105:46)
+-----------------2023-04-29-52-----------------
+Error [ERR_MODULE_NOT_FOUND]: Cannot find package 'app.ts' imported from /home/shaper/문서/shapbot-canary/modules/extras.ts
+    at new NodeError (node:internal/errors:399:5)
+    at packageResolve (node:internal/modules/esm/resolve:794:9)
+    at moduleResolve (node:internal/modules/esm/resolve:843:20)
+    at ESMLoader.defaultResolve (node:internal/modules/esm/resolve:1058:11)
+    at ESMLoader.resolve (node:internal/modules/esm/loader:323:32)
+    at ESMLoader.getModuleJob (node:internal/modules/esm/loader:172:38)
+    at ESMLoader.import (node:internal/modules/esm/loader:276:22)
+    at importModuleDynamically (node:internal/modules/cjs/loader:1205:37)
+    at importModuleDynamicallyWrapper (node:internal/vm/module:428:21)
+    at importModuleDynamically (node:internal/vm:105:46)
+-----------------2023-04-29-55-----------------
+Error [ERR_MODULE_NOT_FOUND]: Cannot find module '/home/shaper/문서/shapbot-canary/modules/app' imported from /home/shaper/문서/shapbot-canary/modules/extras.ts
+Did you mean to import ../../app.ts?
+    at new NodeError (node:internal/errors:399:5)
+    at finalizeResolution (node:internal/modules/esm/resolve:231:11)
+    at moduleResolve (node:internal/modules/esm/resolve:850:10)
+    at ESMLoader.defaultResolve (node:internal/modules/esm/resolve:1058:11)
+    at ESMLoader.resolve (node:internal/modules/esm/loader:323:32)
+    at ESMLoader.getModuleJob (node:internal/modules/esm/loader:172:38)
+    at ESMLoader.import (node:internal/modules/esm/loader:276:22)
+    at importModuleDynamically (node:internal/modules/cjs/loader:1205:37)
+    at importModuleDynamicallyWrapper (node:internal/vm/module:428:21)
+    at importModuleDynamically (node:internal/vm:105:46)
+-----------------2023-04-30-13-----------------
+TypeError: player.subscribe is not a function
+    at VoiceConnection.subscribe (/home/shaper/문서/shapbot-canary/node_modules/@discordjs/voice/src/VoiceConnection.ts:662:42)
+    at LavaPlayer.play (/home/shaper/문서/shapbot-canary/modules/player.ts:61:39)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+-----------------2023-04-30-24-----------------
+Error: connect ECONNREFUSED 127.0.0.1:2333
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1532:16)
+-----------------2023-04-30-51-----------------
+Error: No files found
+    at ReaddirpStream.<anonymous> (/home/shaper/문서/shapbot-canary/structures/Client.ts:52:32)
+    at ReaddirpStream.emit (node:events:513:28)
+    at ReaddirpStream.emit (node:domain:489:12)
+    at endReadableNT (node:internal/streams/readable:1359:12)
+    at processTicksAndRejections (node:internal/process/task_queues:82:21)
+-----------------2023-04-30-22-----------------
+Error: No files found
+    at ReaddirpStream.<anonymous> (/home/shaper/문서/shapbot-canary/structures/Client.ts:52:32)
+    at ReaddirpStream.emit (node:events:513:28)
+    at ReaddirpStream.emit (node:domain:489:12)
+    at endReadableNT (node:internal/streams/readable:1359:12)
+    at processTicksAndRejections (node:internal/process/task_queues:82:21)
+-----------------2023-04-30-22-----------------
+Error: connect ECONNREFUSED 127.0.0.1:2333
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1532:16)
+-----------------2023-04-30-32-----------------
+Error: No files found
+    at ReaddirpStream.<anonymous> (/home/shaper/문서/shapbot-canary/structures/Client.ts:52:32)
+    at ReaddirpStream.emit (node:events:513:28)
+    at ReaddirpStream.emit (node:domain:489:12)
+    at endReadableNT (node:internal/streams/readable:1359:12)
+    at processTicksAndRejections (node:internal/process/task_queues:82:21)
+-----------------2023-04-30-33-----------------
+Error: No files found
+    at ReaddirpStream.<anonymous> (/home/shaper/문서/shapbot-canary/structures/Client.ts:52:32)
+    at ReaddirpStream.emit (node:events:513:28)
+    at ReaddirpStream.emit (node:domain:489:12)
+    at endReadableNT (node:internal/streams/readable:1359:12)
+    at processTicksAndRejections (node:internal/process/task_queues:82:21)
+-----------------2023-04-30-34-----------------
+Error: No files found
+    at ReaddirpStream.<anonymous> (/home/shaper/문서/shapbot-canary/structures/Client.ts:52:32)
+    at ReaddirpStream.emit (node:events:513:28)
+    at ReaddirpStream.emit (node:domain:489:12)
+    at endReadableNT (node:internal/streams/readable:1359:12)
+    at processTicksAndRejections (node:internal/process/task_queues:82:21)
+-----------------2023-05-01-06-----------------
+Error: No available nodes.
+    at /home/shaper/문서/shapbot-canary/node_modules/erela.js/dist/structures/Manager.js:145:23
+    at new Promise (<anonymous>)
+    at Manager.search (/home/shaper/문서/shapbot-canary/node_modules/erela.js/dist/structures/Manager.js:142:16)
+    at exClient.<anonymous> (/home/shaper/문서/shapbot-canary/app.ts:51:50)
+    at exClient.emit (node:events:513:28)
+    at exClient.emit (node:domain:489:12)
+    at MessageCreateAction.handle (/home/shaper/문서/shapbot-canary/node_modules/discord.js/src/client/actions/MessageCreate.js:28:14)
+    at Object.module.exports (/home/shaper/문서/shapbot-canary/node_modules/discord.js/src/client/websocket/handlers/MESSAGE_CREATE.js:4:32)
+    at WebSocketManager.handlePacket (/home/shaper/문서/shapbot-canary/node_modules/discord.js/src/client/websocket/WebSocketManager.js:352:31)
+    at WebSocketShard.onPacket (/home/shaper/문서/shapbot-canary/node_modules/discord.js/src/client/websocket/WebSocketShard.js:494:22)
+-----------------2023-05-01-09-----------------
+Error: No available nodes.
+    at /home/shaper/문서/shapbot-canary/node_modules/erela.js/dist/structures/Manager.js:145:23
+    at new Promise (<anonymous>)
+    at Manager.search (/home/shaper/문서/shapbot-canary/node_modules/erela.js/dist/structures/Manager.js:142:16)
+    at exClient.<anonymous> (/home/shaper/문서/shapbot-canary/app.ts:51:50)
+    at exClient.emit (node:events:513:28)
+    at exClient.emit (node:domain:489:12)
+    at MessageCreateAction.handle (/home/shaper/문서/shapbot-canary/node_modules/discord.js/src/client/actions/MessageCreate.js:28:14)
+    at Object.module.exports (/home/shaper/문서/shapbot-canary/node_modules/discord.js/src/client/websocket/handlers/MESSAGE_CREATE.js:4:32)
+    at WebSocketManager.handlePacket (/home/shaper/문서/shapbot-canary/node_modules/discord.js/src/client/websocket/WebSocketManager.js:352:31)
+    at WebSocketShard.onPacket (/home/shaper/문서/shapbot-canary/node_modules/discord.js/src/client/websocket/WebSocketShard.js:494:22)
+-----------------2023-05-01-12-----------------
+Error: No available nodes.
+    at /home/shaper/문서/shapbot-canary/node_modules/erela.js/dist/structures/Manager.js:145:23
+    at new Promise (<anonymous>)
+    at Manager.search (/home/shaper/문서/shapbot-canary/node_modules/erela.js/dist/structures/Manager.js:142:16)
+    at exClient.<anonymous> (/home/shaper/문서/shapbot-canary/app.ts:51:50)
+    at exClient.emit (node:events:513:28)
+    at exClient.emit (node:domain:489:12)
+    at MessageCreateAction.handle (/home/shaper/문서/shapbot-canary/node_modules/discord.js/src/client/actions/MessageCreate.js:28:14)
+    at Object.module.exports (/home/shaper/문서/shapbot-canary/node_modules/discord.js/src/client/websocket/handlers/MESSAGE_CREATE.js:4:32)
+    at WebSocketManager.handlePacket (/home/shaper/문서/shapbot-canary/node_modules/discord.js/src/client/websocket/WebSocketManager.js:352:31)
+    at WebSocketShard.onPacket (/home/shaper/문서/shapbot-canary/node_modules/discord.js/src/client/websocket/WebSocketShard.js:494:22)
+-----------------2023-05-01-17-----------------
+Error: No available nodes.
+    at /home/shaper/문서/shapbot-canary/node_modules/erela.js/dist/structures/Manager.js:145:23
+    at new Promise (<anonymous>)
+    at Manager.search (/home/shaper/문서/shapbot-canary/node_modules/erela.js/dist/structures/Manager.js:142:16)
+    at exClient.<anonymous> (/home/shaper/문서/shapbot-canary/app.ts:51:50)
+    at exClient.emit (node:events:513:28)
+    at exClient.emit (node:domain:489:12)
+    at MessageCreateAction.handle (/home/shaper/문서/shapbot-canary/node_modules/discord.js/src/client/actions/MessageCreate.js:28:14)
+    at Object.module.exports (/home/shaper/문서/shapbot-canary/node_modules/discord.js/src/client/websocket/handlers/MESSAGE_CREATE.js:4:32)
+    at WebSocketManager.handlePacket (/home/shaper/문서/shapbot-canary/node_modules/discord.js/src/client/websocket/WebSocketManager.js:352:31)
+    at WebSocketShard.onPacket (/home/shaper/문서/shapbot-canary/node_modules/discord.js/src/client/websocket/WebSocketShard.js:494:22)
+-----------------2023-05-01-18-----------------
+Error: No available nodes.
+    at /home/shaper/문서/shapbot-canary/node_modules/erela.js/dist/structures/Manager.js:145:23
+    at new Promise (<anonymous>)
+    at Manager.search (/home/shaper/문서/shapbot-canary/node_modules/erela.js/dist/structures/Manager.js:142:16)
+    at exClient.<anonymous> (/home/shaper/문서/shapbot-canary/app.ts:51:50)
+    at exClient.emit (node:events:513:28)
+    at exClient.emit (node:domain:489:12)
+    at MessageCreateAction.handle (/home/shaper/문서/shapbot-canary/node_modules/discord.js/src/client/actions/MessageCreate.js:28:14)
+    at Object.module.exports (/home/shaper/문서/shapbot-canary/node_modules/discord.js/src/client/websocket/handlers/MESSAGE_CREATE.js:4:32)
+    at WebSocketManager.handlePacket (/home/shaper/문서/shapbot-canary/node_modules/discord.js/src/client/websocket/WebSocketManager.js:352:31)
+    at WebSocketShard.onPacket (/home/shaper/문서/shapbot-canary/node_modules/discord.js/src/client/websocket/WebSocketShard.js:494:22)
+-----------------2023-05-01-25-----------------
+Error: No available nodes.
+    at /home/shaper/문서/shapbot-canary/node_modules/erela.js/dist/structures/Manager.js:145:23
+    at new Promise (<anonymous>)
+    at Manager.search (/home/shaper/문서/shapbot-canary/node_modules/erela.js/dist/structures/Manager.js:142:16)
+    at exClient.<anonymous> (/home/shaper/문서/shapbot-canary/app.ts:51:50)
+    at exClient.emit (node:events:513:28)
+    at exClient.emit (node:domain:489:12)
+    at MessageCreateAction.handle (/home/shaper/문서/shapbot-canary/node_modules/discord.js/src/client/actions/MessageCreate.js:28:14)
+    at Object.module.exports (/home/shaper/문서/shapbot-canary/node_modules/discord.js/src/client/websocket/handlers/MESSAGE_CREATE.js:4:32)
+    at WebSocketManager.handlePacket (/home/shaper/문서/shapbot-canary/node_modules/discord.js/src/client/websocket/WebSocketManager.js:352:31)
+    at WebSocketShard.onPacket (/home/shaper/문서/shapbot-canary/node_modules/discord.js/src/client/websocket/WebSocketShard.js:494:22)
+-----------------2023-05-01-19-----------------
+Error: No available nodes.
+    at /home/shaper/문서/shapbot-canary/node_modules/erela.js/dist/structures/Manager.js:145:23
+    at new Promise (<anonymous>)
+    at Manager.search (/home/shaper/문서/shapbot-canary/node_modules/erela.js/dist/structures/Manager.js:142:16)
+    at exClient.<anonymous> (/home/shaper/문서/shapbot-canary/app.ts:51:50)
+    at exClient.emit (node:events:513:28)
+    at exClient.emit (node:domain:489:12)
+    at MessageCreateAction.handle (/home/shaper/문서/shapbot-canary/node_modules/discord.js/src/client/actions/MessageCreate.js:28:14)
+    at Object.module.exports (/home/shaper/문서/shapbot-canary/node_modules/discord.js/src/client/websocket/handlers/MESSAGE_CREATE.js:4:32)
+    at WebSocketManager.handlePacket (/home/shaper/문서/shapbot-canary/node_modules/discord.js/src/client/websocket/WebSocketManager.js:352:31)
+    at WebSocketShard.onPacket (/home/shaper/문서/shapbot-canary/node_modules/discord.js/src/client/websocket/WebSocketShard.js:494:22)
+-----------------2023-05-01-22-----------------
+Error: No available nodes.
+    at /home/shaper/문서/shapbot-canary/node_modules/erela.js/dist/structures/Manager.js:145:23
+    at new Promise (<anonymous>)
+    at Manager.search (/home/shaper/문서/shapbot-canary/node_modules/erela.js/dist/structures/Manager.js:142:16)
+    at exClient.<anonymous> (/home/shaper/문서/shapbot-canary/app.ts:51:50)
+    at exClient.emit (node:events:513:28)
+    at exClient.emit (node:domain:489:12)
+    at MessageCreateAction.handle (/home/shaper/문서/shapbot-canary/node_modules/discord.js/src/client/actions/MessageCreate.js:28:14)
+    at Object.module.exports (/home/shaper/문서/shapbot-canary/node_modules/discord.js/src/client/websocket/handlers/MESSAGE_CREATE.js:4:32)
+    at WebSocketManager.handlePacket (/home/shaper/문서/shapbot-canary/node_modules/discord.js/src/client/websocket/WebSocketManager.js:352:31)
+    at WebSocketShard.onPacket (/home/shaper/문서/shapbot-canary/node_modules/discord.js/src/client/websocket/WebSocketShard.js:494:22)
+-----------------2023-05-01-22-----------------
+Error: No available nodes.
+    at /home/shaper/문서/shapbot-canary/node_modules/erela.js/dist/structures/Manager.js:145:23
+    at new Promise (<anonymous>)
+    at Manager.search (/home/shaper/문서/shapbot-canary/node_modules/erela.js/dist/structures/Manager.js:142:16)
+    at exClient.<anonymous> (/home/shaper/문서/shapbot-canary/app.ts:51:50)
+    at exClient.emit (node:events:513:28)
+    at exClient.emit (node:domain:489:12)
+    at MessageCreateAction.handle (/home/shaper/문서/shapbot-canary/node_modules/discord.js/src/client/actions/MessageCreate.js:28:14)
+    at Object.module.exports (/home/shaper/문서/shapbot-canary/node_modules/discord.js/src/client/websocket/handlers/MESSAGE_CREATE.js:4:32)
+    at WebSocketManager.handlePacket (/home/shaper/문서/shapbot-canary/node_modules/discord.js/src/client/websocket/WebSocketManager.js:352:31)
+    at WebSocketShard.onPacket (/home/shaper/문서/shapbot-canary/node_modules/discord.js/src/client/websocket/WebSocketShard.js:494:22)
+-----------------2023-05-01-23-----------------
+Error: No available nodes.
+    at /home/shaper/문서/shapbot-canary/node_modules/erela.js/dist/structures/Manager.js:145:23
+    at new Promise (<anonymous>)
+    at Manager.search (/home/shaper/문서/shapbot-canary/node_modules/erela.js/dist/structures/Manager.js:142:16)
+    at exClient.<anonymous> (/home/shaper/문서/shapbot-canary/app.ts:51:50)
+    at exClient.emit (node:events:513:28)
+    at exClient.emit (node:domain:489:12)
+    at MessageCreateAction.handle (/home/shaper/문서/shapbot-canary/node_modules/discord.js/src/client/actions/MessageCreate.js:28:14)
+    at Object.module.exports (/home/shaper/문서/shapbot-canary/node_modules/discord.js/src/client/websocket/handlers/MESSAGE_CREATE.js:4:32)
+    at WebSocketManager.handlePacket (/home/shaper/문서/shapbot-canary/node_modules/discord.js/src/client/websocket/WebSocketManager.js:352:31)
+    at WebSocketShard.onPacket (/home/shaper/문서/shapbot-canary/node_modules/discord.js/src/client/websocket/WebSocketShard.js:494:22)
+-----------------2023-05-01-24-----------------
+Error: No available nodes.
+    at /home/shaper/문서/shapbot-canary/node_modules/erela.js/dist/structures/Manager.js:145:23
+    at new Promise (<anonymous>)
+    at Manager.search (/home/shaper/문서/shapbot-canary/node_modules/erela.js/dist/structures/Manager.js:142:16)
+    at exClient.<anonymous> (/home/shaper/문서/shapbot-canary/app.ts:51:50)
+    at exClient.emit (node:events:513:28)
+    at exClient.emit (node:domain:489:12)
+    at MessageCreateAction.handle (/home/shaper/문서/shapbot-canary/node_modules/discord.js/src/client/actions/MessageCreate.js:28:14)
+    at Object.module.exports (/home/shaper/문서/shapbot-canary/node_modules/discord.js/src/client/websocket/handlers/MESSAGE_CREATE.js:4:32)
+    at WebSocketManager.handlePacket (/home/shaper/문서/shapbot-canary/node_modules/discord.js/src/client/websocket/WebSocketManager.js:352:31)
+    at WebSocketShard.onPacket (/home/shaper/문서/shapbot-canary/node_modules/discord.js/src/client/websocket/WebSocketShard.js:494:22)
+-----------------2023-05-01-24-----------------
+Error: No available nodes.
+    at /home/shaper/문서/shapbot-canary/node_modules/erela.js/dist/structures/Manager.js:145:23
+    at new Promise (<anonymous>)
+    at Manager.search (/home/shaper/문서/shapbot-canary/node_modules/erela.js/dist/structures/Manager.js:142:16)
+    at exClient.<anonymous> (/home/shaper/문서/shapbot-canary/app.ts:51:50)
+    at exClient.emit (node:events:513:28)
+    at exClient.emit (node:domain:489:12)
+    at MessageCreateAction.handle (/home/shaper/문서/shapbot-canary/node_modules/discord.js/src/client/actions/MessageCreate.js:28:14)
+    at Object.module.exports (/home/shaper/문서/shapbot-canary/node_modules/discord.js/src/client/websocket/handlers/MESSAGE_CREATE.js:4:32)
+    at WebSocketManager.handlePacket (/home/shaper/문서/shapbot-canary/node_modules/discord.js/src/client/websocket/WebSocketManager.js:352:31)
+    at WebSocketShard.onPacket (/home/shaper/문서/shapbot-canary/node_modules/discord.js/src/client/websocket/WebSocketShard.js:494:22)
+-----------------2023-05-01-27-----------------
+Error: No available nodes.
+    at /home/shaper/문서/shapbot-canary/node_modules/erela.js/dist/structures/Manager.js:145:23
+    at new Promise (<anonymous>)
+    at Manager.search (/home/shaper/문서/shapbot-canary/node_modules/erela.js/dist/structures/Manager.js:142:16)
+    at exClient.<anonymous> (/home/shaper/문서/shapbot-canary/app.ts:53:50)
+    at exClient.emit (node:events:513:28)
+    at exClient.emit (node:domain:489:12)
+    at MessageCreateAction.handle (/home/shaper/문서/shapbot-canary/node_modules/discord.js/src/client/actions/MessageCreate.js:28:14)
+    at Object.module.exports (/home/shaper/문서/shapbot-canary/node_modules/discord.js/src/client/websocket/handlers/MESSAGE_CREATE.js:4:32)
+    at WebSocketManager.handlePacket (/home/shaper/문서/shapbot-canary/node_modules/discord.js/src/client/websocket/WebSocketManager.js:352:31)
+    at WebSocketShard.onPacket (/home/shaper/문서/shapbot-canary/node_modules/discord.js/src/client/websocket/WebSocketShard.js:494:22)
+-----------------2023-05-01-09-----------------
+Error: No available nodes.
+    at /home/shaper/문서/shapbot-canary/node_modules/erela.js/dist/structures/Manager.js:145:23
+    at new Promise (<anonymous>)
+    at Manager.search (/home/shaper/문서/shapbot-canary/node_modules/erela.js/dist/structures/Manager.js:142:16)
+    at exClient.<anonymous> (/home/shaper/문서/shapbot-canary/app.ts:53:50)
+    at exClient.emit (node:events:513:28)
+    at exClient.emit (node:domain:489:12)
+    at MessageCreateAction.handle (/home/shaper/문서/shapbot-canary/node_modules/discord.js/src/client/actions/MessageCreate.js:28:14)
+    at Object.module.exports (/home/shaper/문서/shapbot-canary/node_modules/discord.js/src/client/websocket/handlers/MESSAGE_CREATE.js:4:32)
+    at WebSocketManager.handlePacket (/home/shaper/문서/shapbot-canary/node_modules/discord.js/src/client/websocket/WebSocketManager.js:352:31)
+    at WebSocketShard.onPacket (/home/shaper/문서/shapbot-canary/node_modules/discord.js/src/client/websocket/WebSocketShard.js:494:22)
+-----------------2023-05-01-54-----------------
+Error: No available nodes.
+    at /home/shaper/문서/shapbot-canary/node_modules/erela.js/dist/structures/Manager.js:145:23
+    at new Promise (<anonymous>)
+    at Manager.search (/home/shaper/문서/shapbot-canary/node_modules/erela.js/dist/structures/Manager.js:142:16)
+    at exClient.<anonymous> (/home/shaper/문서/shapbot-canary/app.ts:53:50)
+    at exClient.emit (node:events:513:28)
+    at exClient.emit (node:domain:489:12)
+    at MessageCreateAction.handle (/home/shaper/문서/shapbot-canary/node_modules/discord.js/src/client/actions/MessageCreate.js:28:14)
+    at Object.module.exports (/home/shaper/문서/shapbot-canary/node_modules/discord.js/src/client/websocket/handlers/MESSAGE_CREATE.js:4:32)
+    at WebSocketManager.handlePacket (/home/shaper/문서/shapbot-canary/node_modules/discord.js/src/client/websocket/WebSocketManager.js:352:31)
+    at WebSocketShard.onPacket (/home/shaper/문서/shapbot-canary/node_modules/discord.js/src/client/websocket/WebSocketShard.js:494:22)
+-----------------2023-05-01-54-----------------
+Error: No available nodes.
+    at /home/shaper/문서/shapbot-canary/node_modules/erela.js/dist/structures/Manager.js:145:23
+    at new Promise (<anonymous>)
+    at Manager.search (/home/shaper/문서/shapbot-canary/node_modules/erela.js/dist/structures/Manager.js:142:16)
+    at exClient.<anonymous> (/home/shaper/문서/shapbot-canary/app.ts:53:50)
+    at exClient.emit (node:events:513:28)
+    at exClient.emit (node:domain:489:12)
+    at MessageCreateAction.handle (/home/shaper/문서/shapbot-canary/node_modules/discord.js/src/client/actions/MessageCreate.js:28:14)
+    at Object.module.exports (/home/shaper/문서/shapbot-canary/node_modules/discord.js/src/client/websocket/handlers/MESSAGE_CREATE.js:4:32)
+    at WebSocketManager.handlePacket (/home/shaper/문서/shapbot-canary/node_modules/discord.js/src/client/websocket/WebSocketManager.js:352:31)
+    at WebSocketShard.onPacket (/home/shaper/문서/shapbot-canary/node_modules/discord.js/src/client/websocket/WebSocketShard.js:494:22)
+-----------------2023-05-02-50-----------------
+Error: No available nodes.
+    at /home/shaper/문서/shapbot-canary/node_modules/erela.js/dist/structures/Manager.js:145:23
+    at new Promise (<anonymous>)
+    at LavaManager.search (/home/shaper/문서/shapbot-canary/node_modules/erela.js/dist/structures/Manager.js:142:16)
+    at exClient.<anonymous> (/home/shaper/문서/shapbot-canary/app.ts:53:50)
+    at exClient.emit (node:events:513:28)
+    at exClient.emit (node:domain:489:12)
+    at MessageCreateAction.handle (/home/shaper/문서/shapbot-canary/node_modules/discord.js/src/client/actions/MessageCreate.js:28:14)
+    at Object.module.exports (/home/shaper/문서/shapbot-canary/node_modules/discord.js/src/client/websocket/handlers/MESSAGE_CREATE.js:4:32)
+    at WebSocketManager.handlePacket (/home/shaper/문서/shapbot-canary/node_modules/discord.js/src/client/websocket/WebSocketManager.js:352:31)
+    at WebSocketShard.onPacket (/home/shaper/문서/shapbot-canary/node_modules/discord.js/src/client/websocket/WebSocketShard.js:494:22)
+-----------------2023-05-02-44-----------------
+Error: No files found
+    at ReaddirpStream.<anonymous> (/home/shaper/문서/shapbot-canary/deploy-command.ts:40:36)
+    at ReaddirpStream.emit (node:events:513:28)
+    at ReaddirpStream.emit (node:domain:489:12)
+    at endReadableNT (node:internal/streams/readable:1359:12)
+    at processTicksAndRejections (node:internal/process/task_queues:82:21)
+-----------------2023-05-02-50-----------------
+RangeError: No available nodes.
+    at new Player (/home/shaper/문서/shapbot-canary/node_modules/erela.js/dist/structures/Player.js:102:19)
+    at LavaManager.create (/home/shaper/문서/shapbot-canary/node_modules/erela.js/dist/structures/Manager.js:213:16)
+    at Command.execute (/home/shaper/문서/shapbot-canary/commands/play.ts:23:45)
+    at exClient.<anonymous> (/home/shaper/문서/shapbot-canary/app.ts:95:23)
+    at exClient.emit (node:events:513:28)
+    at exClient.emit (node:domain:489:12)
+    at InteractionCreateAction.handle (/home/shaper/문서/shapbot-canary/node_modules/discord.js/src/client/actions/InteractionCreate.js:97:12)
+    at Object.module.exports [as INTERACTION_CREATE] (/home/shaper/문서/shapbot-canary/node_modules/discord.js/src/client/websocket/handlers/INTERACTION_CREATE.js:4:36)
+    at WebSocketManager.handlePacket (/home/shaper/문서/shapbot-canary/node_modules/discord.js/src/client/websocket/WebSocketManager.js:352:31)
+    at WebSocketShard.onPacket (/home/shaper/문서/shapbot-canary/node_modules/discord.js/src/client/websocket/WebSocketShard.js:494:22)
+-----------------2023-05-02-20-----------------
+RangeError: No available nodes.
+    at new Player (/home/shaper/문서/shapbot-canary/node_modules/erela.js/dist/structures/Player.js:102:19)
+    at LavaManager.create (/home/shaper/문서/shapbot-canary/node_modules/erela.js/dist/structures/Manager.js:213:16)
+    at Command.execute (/home/shaper/문서/shapbot-canary/commands/play.ts:23:45)
+    at exClient.<anonymous> (/home/shaper/문서/shapbot-canary/app.ts:95:23)
+    at exClient.emit (node:events:513:28)
+    at exClient.emit (node:domain:489:12)
+    at InteractionCreateAction.handle (/home/shaper/문서/shapbot-canary/node_modules/discord.js/src/client/actions/InteractionCreate.js:97:12)
+    at Object.module.exports [as INTERACTION_CREATE] (/home/shaper/문서/shapbot-canary/node_modules/discord.js/src/client/websocket/handlers/INTERACTION_CREATE.js:4:36)
+    at WebSocketManager.handlePacket (/home/shaper/문서/shapbot-canary/node_modules/discord.js/src/client/websocket/WebSocketManager.js:352:31)
+    at WebSocketShard.onPacket (/home/shaper/문서/shapbot-canary/node_modules/discord.js/src/client/websocket/WebSocketShard.js:494:22)
+-----------------2023-05-03-54-----------------
+RangeError: No available nodes.
+    at new Player (/home/shaper/문서/shapbot-canary/node_modules/erela.js/dist/structures/Player.js:102:19)
+    at LavaManager.create (/home/shaper/문서/shapbot-canary/node_modules/erela.js/dist/structures/Manager.js:213:16)
+    at Command.execute (/home/shaper/문서/shapbot-canary/commands/play.ts:23:45)
+    at exClient.<anonymous> (/home/shaper/문서/shapbot-canary/app.ts:95:23)
+    at exClient.emit (node:events:513:28)
+    at exClient.emit (node:domain:489:12)
+    at InteractionCreateAction.handle (/home/shaper/문서/shapbot-canary/node_modules/discord.js/src/client/actions/InteractionCreate.js:97:12)
+    at Object.module.exports [as INTERACTION_CREATE] (/home/shaper/문서/shapbot-canary/node_modules/discord.js/src/client/websocket/handlers/INTERACTION_CREATE.js:4:36)
+    at WebSocketManager.handlePacket (/home/shaper/문서/shapbot-canary/node_modules/discord.js/src/client/websocket/WebSocketManager.js:352:31)
+    at WebSocketShard.onPacket (/home/shaper/문서/shapbot-canary/node_modules/discord.js/src/client/websocket/WebSocketShard.js:494:22)
+-----------------2023-05-03-55-----------------
+RangeError: No available nodes.
+    at new Player (/home/shaper/문서/shapbot-canary/node_modules/erela.js/dist/structures/Player.js:102:19)
+    at LavaManager.create (/home/shaper/문서/shapbot-canary/node_modules/erela.js/dist/structures/Manager.js:213:16)
+    at Command.execute (/home/shaper/문서/shapbot-canary/commands/play.ts:23:45)
+    at exClient.<anonymous> (/home/shaper/문서/shapbot-canary/app.ts:95:23)
+    at exClient.emit (node:events:513:28)
+    at exClient.emit (node:domain:489:12)
+    at InteractionCreateAction.handle (/home/shaper/문서/shapbot-canary/node_modules/discord.js/src/client/actions/InteractionCreate.js:97:12)
+    at Object.module.exports [as INTERACTION_CREATE] (/home/shaper/문서/shapbot-canary/node_modules/discord.js/src/client/websocket/handlers/INTERACTION_CREATE.js:4:36)
+    at WebSocketManager.handlePacket (/home/shaper/문서/shapbot-canary/node_modules/discord.js/src/client/websocket/WebSocketManager.js:352:31)
+    at WebSocketShard.onPacket (/home/shaper/문서/shapbot-canary/node_modules/discord.js/src/client/websocket/WebSocketShard.js:494:22)
+-----------------2023-05-03-58-----------------
+RangeError: No available nodes.
+    at new Player (/home/shaper/문서/shapbot-canary/node_modules/erela.js/dist/structures/Player.js:102:19)
+    at LavaManager.create (/home/shaper/문서/shapbot-canary/node_modules/erela.js/dist/structures/Manager.js:213:16)
+    at Command.execute (/home/shaper/문서/shapbot-canary/commands/play.ts:23:45)
+    at exClient.<anonymous> (/home/shaper/문서/shapbot-canary/app.ts:95:23)
+    at exClient.emit (node:events:513:28)
+    at exClient.emit (node:domain:489:12)
+    at InteractionCreateAction.handle (/home/shaper/문서/shapbot-canary/node_modules/discord.js/src/client/actions/InteractionCreate.js:97:12)
+    at Object.module.exports [as INTERACTION_CREATE] (/home/shaper/문서/shapbot-canary/node_modules/discord.js/src/client/websocket/handlers/INTERACTION_CREATE.js:4:36)
+    at WebSocketManager.handlePacket (/home/shaper/문서/shapbot-canary/node_modules/discord.js/src/client/websocket/WebSocketManager.js:352:31)
+    at WebSocketShard.onPacket (/home/shaper/문서/shapbot-canary/node_modules/discord.js/src/client/websocket/WebSocketShard.js:494:22)
+-----------------2023-05-03-59-----------------
+RangeError: No available nodes.
+    at new Player (/home/shaper/문서/shapbot-canary/node_modules/erela.js/dist/structures/Player.js:102:19)
+    at LavaManager.create (/home/shaper/문서/shapbot-canary/node_modules/erela.js/dist/structures/Manager.js:213:16)
+    at Command.execute (/home/shaper/문서/shapbot-canary/commands/play.ts:23:45)
+    at exClient.<anonymous> (/home/shaper/문서/shapbot-canary/app.ts:95:23)
+    at exClient.emit (node:events:513:28)
+    at exClient.emit (node:domain:489:12)
+    at InteractionCreateAction.handle (/home/shaper/문서/shapbot-canary/node_modules/discord.js/src/client/actions/InteractionCreate.js:97:12)
+    at Object.module.exports [as INTERACTION_CREATE] (/home/shaper/문서/shapbot-canary/node_modules/discord.js/src/client/websocket/handlers/INTERACTION_CREATE.js:4:36)
+    at WebSocketManager.handlePacket (/home/shaper/문서/shapbot-canary/node_modules/discord.js/src/client/websocket/WebSocketManager.js:352:31)
+    at WebSocketShard.onPacket (/home/shaper/문서/shapbot-canary/node_modules/discord.js/src/client/websocket/WebSocketShard.js:494:22)
+-----------------2023-05-03-35-----------------
+Error [TokenInvalid]: An invalid token was provided.
+    at exClient.login (C:\Users\moonm\Downloads\shapbot-canary\node_modules\discord.js\src\client\Client.js:214:52)
+    at exClient.start (C:\Users\moonm\Downloads\shapbot-canary\structures\Client.ts:45:14)
+    at Object.<anonymous> (C:\Users\moonm\Downloads\shapbot-canary\app.ts:57:8)
+    at Module._compile (node:internal/modules/cjs/loader:1254:14)
+    at Module.m._compile (C:\Users\moonm\AppData\Roaming\npm\node_modules\ts-node\src\index.ts:1618:23)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1308:10)
+    at Object.require.extensions.<computed> [as .ts] (C:\Users\moonm\AppData\Roaming\npm\node_modules\ts-node\src\index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1117:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:958:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:81:12)
+-----------------2023-05-04-09-----------------
+Error: Used disallowed intents
+    at WebSocketShard.onClose (C:\Users\moonm\Downloads\shapbot-canary\node_modules\@discordjs\ws\src\ws\WebSocketShard.ts:721:11)
+    at WebSocket.emit (node:events:513:28)
+    at WebSocket.emit (node:domain:489:12)
+    at WebSocket.emitClose (C:\Users\moonm\Downloads\shapbot-canary\node_modules\ws\lib\websocket.js:258:10)
+    at TLSSocket.socketOnClose (C:\Users\moonm\Downloads\shapbot-canary\node_modules\ws\lib\websocket.js:1264:15)
+    at TLSSocket.emit (node:events:525:35)
+    at TLSSocket.emit (node:domain:489:12)
+    at node:net:322:12
+    at TCP.done (node:_tls_wrap:588:7)
+-----------------2023-05-04-13-----------------
+Error: Unexpected server response: 401
+    at ClientRequest.<anonymous> (C:\Users\moonm\Downloads\shapbot-canary\node_modules\lavacord\node_modules\ws\lib\websocket.js:783:7)
+    at ClientRequest.emit (node:events:513:28)
+    at ClientRequest.emit (node:domain:489:12)
+    at HTTPParser.parserOnIncomingClient (node:_http_client:701:27)
+    at HTTPParser.parserOnHeadersComplete (node:_http_common:119:17)
+    at Socket.socketOnData (node:_http_client:542:22)
+    at Socket.emit (node:events:513:28)
+    at Socket.emit (node:domain:489:12)
+    at addChunk (node:internal/streams/readable:324:12)
+    at readableAddChunk (node:internal/streams/readable:297:9)
+-----------------2023-05-04-28-----------------
+Error: Can't join this channel. This connection is already connected
+    at Node.joinChannel (E:\NodeProjects\shapbot-canary\node_modules\shoukaku\src\node\Node.ts:232:19)
+    at Command.execute (E:\NodeProjects\shapbot-canary\commands\play.ts:59:35)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async exClient.<anonymous> (E:\NodeProjects\shapbot-canary\app.ts:69:9)
+-----------------2023-05-04-30-----------------
+Error: Can't join this channel. This connection is already connected
+    at Node.joinChannel (E:\NodeProjects\shapbot-canary\node_modules\shoukaku\src\node\Node.ts:232:19)
+    at Command.execute (E:\NodeProjects\shapbot-canary\commands\play.ts:59:35)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async exClient.<anonymous> (E:\NodeProjects\shapbot-canary\app.ts:69:9)
+-----------------2023-05-04-31-----------------
+Error: Can't join this channel. This connection is already connected
+    at Node.joinChannel (E:\NodeProjects\shapbot-canary\node_modules\shoukaku\src\node\Node.ts:232:19)
+    at Command.execute (E:\NodeProjects\shapbot-canary\commands\play.ts:59:35)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async exClient.<anonymous> (E:\NodeProjects\shapbot-canary\app.ts:69:9)
+-----------------2023-05-04-16-----------------
+Error: Can't join this channel. This connection is already connected
+    at Node.joinChannel (/home/shaper/문서/shapbot-canary/node_modules/shoukaku/src/node/Node.ts:232:19)
+    at Command.execute (/home/shaper/문서/shapbot-canary/commands/play.ts:60:35)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async exClient.<anonymous> (/home/shaper/문서/shapbot-canary/app.ts:69:9)
+-----------------2023-05-04-03-----------------
+DiscordAPIError[10062]: Unknown interaction
+    at handleErrors (/home/shaper/문서/shapbot-canary/node_modules/@discordjs/rest/src/lib/handlers/Shared.ts:152:10)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async BurstHandler.runRequest (/home/shaper/문서/shapbot-canary/node_modules/@discordjs/rest/src/lib/handlers/BurstHandler.ts:137:20)
+    at async REST.request (/home/shaper/문서/shapbot-canary/node_modules/@discordjs/rest/src/lib/REST.ts:343:20)
+    at async ChatInputCommandInteraction.reply (/home/shaper/문서/shapbot-canary/node_modules/discord.js/src/structures/interfaces/InteractionResponses.js:111:5)
+-----------------2023-05-04-07-----------------
+DiscordAPIError[10062]: Unknown interaction
+    at handleErrors (/home/shaper/문서/shapbot-canary/node_modules/@discordjs/rest/src/lib/handlers/Shared.ts:152:10)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async BurstHandler.runRequest (/home/shaper/문서/shapbot-canary/node_modules/@discordjs/rest/src/lib/handlers/BurstHandler.ts:137:20)
+    at async REST.request (/home/shaper/문서/shapbot-canary/node_modules/@discordjs/rest/src/lib/REST.ts:343:20)
+    at async ChatInputCommandInteraction.reply (/home/shaper/문서/shapbot-canary/node_modules/discord.js/src/structures/interfaces/InteractionResponses.js:111:5)
+-----------------2023-05-04-29-----------------
+TSError: ⨯ Unable to compile TypeScript:
+[96mcommands/play.ts[0m:[93m22[0m:[93m90[0m - [91merror[0m[90m TS2554: [0mExpected 2 arguments, but got 3.
+
+[7m22[0m         queue.set(interaction.guildId!!,new Queue(interaction.guild!!.id,voiceChannel.id,interaction.channel!!));
+[7m  [0m [91m                                                                                         ~~~~~~~~~~~~~~~~~~~~~[0m
+
+    at createTSError (/usr/local/lib/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/usr/local/lib/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/usr/local/lib/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/usr/local/lib/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/usr/local/lib/node_modules/ts-node/src/index.ts:1617:30)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1329:10)
+    at Object.require.extensions.<computed> [as .ts] (/usr/local/lib/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1133:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:972:12)
+    at Module.require (node:internal/modules/cjs/loader:1157:19)
+-----------------2023-05-04-29-----------------
+TSError: ⨯ Unable to compile TypeScript:
+[96mcommands/play.ts[0m:[93m22[0m:[93m90[0m - [91merror[0m[90m TS2554: [0mExpected 2 arguments, but got 3.
+
+[7m22[0m         queue.set(interaction.guildId!!,new Queue(interaction.guild!!.id,voiceChannel.id,interaction.channel!!));
+[7m  [0m [91m                                                                                         ~~~~~~~~~~~~~~~~~~~~~[0m
+
+    at createTSError (/usr/local/lib/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/usr/local/lib/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/usr/local/lib/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/usr/local/lib/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/usr/local/lib/node_modules/ts-node/src/index.ts:1617:30)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1329:10)
+    at Object.require.extensions.<computed> [as .ts] (/usr/local/lib/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1133:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:972:12)
+    at Module.require (node:internal/modules/cjs/loader:1157:19)
+-----------------2023-05-05-42-----------------
+TypeError: Cannot read properties of undefined (reading 'embed')
+    at Command.execute (/home/shaper/문서/shapbot-canary/commands/play.ts:24:100)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async exClient.<anonymous> (/home/shaper/문서/shapbot-canary/app.ts:72:9)
+-----------------2023-05-05-11-----------------
+DiscordAPIError[10062]: Unknown interaction
+    at handleErrors (/home/shaper/문서/shapbot-canary/node_modules/@discordjs/rest/src/lib/handlers/Shared.ts:152:10)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async BurstHandler.runRequest (/home/shaper/문서/shapbot-canary/node_modules/@discordjs/rest/src/lib/handlers/BurstHandler.ts:137:20)
+    at async REST.request (/home/shaper/문서/shapbot-canary/node_modules/@discordjs/rest/src/lib/REST.ts:343:20)
+    at async ChatInputCommandInteraction.reply (/home/shaper/문서/shapbot-canary/node_modules/discord.js/src/structures/interfaces/InteractionResponses.js:111:5)
+-----------------2023-05-05-12-----------------
+Error [InteractionNotReplied]: The reply to this interaction has not been sent or deferred.
+    at ChatInputCommandInteraction.editReply (/home/shaper/문서/shapbot-canary/node_modules/discord.js/src/structures/interfaces/InteractionResponses.js:157:48)
+    at Command.execute (/home/shaper/문서/shapbot-canary/commands/play.ts:26:21)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async exClient.<anonymous> (/home/shaper/문서/shapbot-canary/app.ts:72:9)
+-----------------2023-05-05-17-----------------
+TypeError: Cannot read properties of undefined (reading 'on')
+    at queueManager.event (/home/shaper/문서/shapbot-canary/modules/lavalink/playerEvent.ts:12:38)
+    at Command.execute (/home/shaper/문서/shapbot-canary/commands/play.ts:25:66)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async exClient.<anonymous> (/home/shaper/문서/shapbot-canary/app.ts:72:9)
+-----------------2023-05-05-30-----------------
+TypeError: Cannot read properties of undefined (reading 'desc')
+    at Command.execute (/home/shaper/문서/shapbot-canary/commands/play.ts:61:57)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async exClient.<anonymous> (/home/shaper/문서/shapbot-canary/app.ts:72:9)
+-----------------2023-05-05-30-----------------
+DiscordAPIError[50035]: Invalid Form Body
+embeds[0][LIST_ITEM_VALUE_REQUIRED]: List item values of ModelType are required
+    at handleErrors (/home/shaper/문서/shapbot-canary/node_modules/@discordjs/rest/src/lib/handlers/Shared.ts:152:10)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async SequentialHandler.runRequest (/home/shaper/문서/shapbot-canary/node_modules/@discordjs/rest/src/lib/handlers/SequentialHandler.ts:399:20)
+    at async SequentialHandler.queueRequest (/home/shaper/문서/shapbot-canary/node_modules/@discordjs/rest/src/lib/handlers/SequentialHandler.ts:169:11)
+    at async REST.request (/home/shaper/문서/shapbot-canary/node_modules/@discordjs/rest/src/lib/REST.ts:343:20)
+    at async InteractionWebhook.editMessage (/home/shaper/문서/shapbot-canary/node_modules/discord.js/src/structures/Webhook.js:338:15)
+    at async ChatInputCommandInteraction.editReply (/home/shaper/문서/shapbot-canary/node_modules/discord.js/src/structures/interfaces/InteractionResponses.js:158:17)
+-----------------2023-05-05-33-----------------
+DiscordAPIError[50035]: Invalid Form Body
+embeds[0][LIST_ITEM_VALUE_REQUIRED]: List item values of ModelType are required
+    at handleErrors (/home/shaper/문서/shapbot-canary/node_modules/@discordjs/rest/src/lib/handlers/Shared.ts:152:10)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async SequentialHandler.runRequest (/home/shaper/문서/shapbot-canary/node_modules/@discordjs/rest/src/lib/handlers/SequentialHandler.ts:399:20)
+    at async SequentialHandler.queueRequest (/home/shaper/문서/shapbot-canary/node_modules/@discordjs/rest/src/lib/handlers/SequentialHandler.ts:169:11)
+    at async REST.request (/home/shaper/문서/shapbot-canary/node_modules/@discordjs/rest/src/lib/REST.ts:343:20)
+    at async InteractionWebhook.editMessage (/home/shaper/문서/shapbot-canary/node_modules/discord.js/src/structures/Webhook.js:338:15)
+    at async ChatInputCommandInteraction.editReply (/home/shaper/문서/shapbot-canary/node_modules/discord.js/src/structures/interfaces/InteractionResponses.js:158:17)
+    at async Command.execute (/home/shaper/문서/shapbot-canary/commands/play.ts:55:13)
+    at async exClient.<anonymous> (/home/shaper/문서/shapbot-canary/app.ts:72:9)
+-----------------2023-05-05-35-----------------
+DiscordAPIError[50035]: Invalid Form Body
+embeds[0][LIST_ITEM_VALUE_REQUIRED]: List item values of ModelType are required
+    at handleErrors (/home/shaper/문서/shapbot-canary/node_modules/@discordjs/rest/src/lib/handlers/Shared.ts:152:10)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async SequentialHandler.runRequest (/home/shaper/문서/shapbot-canary/node_modules/@discordjs/rest/src/lib/handlers/SequentialHandler.ts:399:20)
+    at async SequentialHandler.queueRequest (/home/shaper/문서/shapbot-canary/node_modules/@discordjs/rest/src/lib/handlers/SequentialHandler.ts:169:11)
+    at async REST.request (/home/shaper/문서/shapbot-canary/node_modules/@discordjs/rest/src/lib/REST.ts:343:20)
+    at async InteractionWebhook.editMessage (/home/shaper/문서/shapbot-canary/node_modules/discord.js/src/structures/Webhook.js:338:15)
+    at async ChatInputCommandInteraction.editReply (/home/shaper/문서/shapbot-canary/node_modules/discord.js/src/structures/interfaces/InteractionResponses.js:158:17)
+    at async Command.execute (/home/shaper/문서/shapbot-canary/commands/play.ts:55:13)
+    at async exClient.<anonymous> (/home/shaper/문서/shapbot-canary/app.ts:72:9)
+-----------------2023-05-05-41-----------------
+TypeError: Cannot read properties of undefined (reading 'desc')
+    at Command.execute (/home/shaper/문서/shapbot-canary/commands/play.ts:72:57)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async exClient.<anonymous> (/home/shaper/문서/shapbot-canary/app.ts:72:9)
+-----------------2023-05-05-53-----------------
+Error: Received one or more errors
+    at UnionValidator.handle (/home/shaper/문서/shapbot-canary/node_modules/@sapphire/shapeshift/src/validators/UnionValidator.ts:105:14)
+    at UnionValidator.parse (/home/shaper/문서/shapbot-canary/node_modules/@sapphire/shapeshift/src/validators/BaseValidator.ts:96:2)
+    at EmbedBuilder.setDescription (/home/shaper/문서/shapbot-canary/node_modules/@discordjs/builders/src/messages/embed/Embed.ts:223:24)
+    at makeEmbed (/home/shaper/문서/shapbot-canary/modules/common/manageEmbed.ts:41:55)
+    at /home/shaper/문서/shapbot-canary/commands/play.ts:22:60
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+-----------------2023-05-05-00-----------------
+TypeError: Cannot read properties of undefined (reading 'desc')
+    at /home/shaper/문서/shapbot-canary/commands/play.ts:15:66
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+-----------------2023-05-05-01-----------------
+UnhandledPromiseRejection: This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). The promise rejected with the reason "#<Collection>".
+-----------------2023-05-05-03-----------------
+TypeError: Cannot read properties of undefined (reading 'desc')
+    at selectMessage (/home/shaper/문서/shapbot-canary/commands/play.ts:15:62)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Command.execute (/home/shaper/문서/shapbot-canary/commands/play.ts:64:13)
+    at async exClient.<anonymous> (/home/shaper/문서/shapbot-canary/app.ts:72:9)
+-----------------2023-05-05-32-----------------
+TypeError: Cannot read properties of undefined (reading 'track')
+    at CompareVideo.compareVideo (/home/shaper/문서/shapbot-canary/modules/lavalink/compareVideo.ts:13:43)
+    at Queue.recommendPlay (/home/shaper/문서/shapbot-canary/modules/lavalink/manageQueue.ts:161:51)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Queue.next (/home/shaper/문서/shapbot-canary/modules/lavalink/manageQueue.ts:296:17)
+    at async Player.<anonymous> (/home/shaper/문서/shapbot-canary/modules/lavalink/playerEvent.ts:16:13)
+-----------------2023-05-05-46-----------------
+Error [ERR_UNHANDLED_ERROR]: Unhandled error. (Collection(0) [Map] {})
+    at new NodeError (node:internal/errors:399:5)
+    at exClient.emit (node:events:502:17)
+    at exClient.emit (node:domain:489:12)
+    at emitUnhandledRejectionOrErr (node:events:394:10)
+    at processTicksAndRejections (node:internal/process/task_queues:84:21)
+-----------------2023-05-05-58-----------------
+TypeError: Cannot read properties of undefined (reading 'embed')
+    at selectMessage (/home/shaper/문서/shapbot-canary/commands/play.ts:14:30)
+    at Command.execute (/home/shaper/문서/shapbot-canary/commands/play.ts:71:19)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async exClient.<anonymous> (/home/shaper/문서/shapbot-canary/app.ts:72:9)
+-----------------2023-05-07-36-----------------
+TypeError: Cannot set properties of undefined (setting 'status')
+    at Object.execute (/home/shaper/문서/shapbot-canary/commands/music/list.ts:30:113)
+    at EventEmitter.<anonymous> (/home/shaper/문서/shapbot-canary/modules/common/interactions.ts:256:14)
+    at EventEmitter.emit (/home/shaper/문서/shapbot-canary/node_modules/eventemitter3/index.js:181:35)
+    at exClient.run (/home/shaper/문서/shapbot-canary/events/interactionCreate.ts:21:25)
+    at exClient.emit (node:events:513:28)
+    at exClient.emit (node:domain:489:12)
+    at InteractionCreateAction.handle (/home/shaper/문서/shapbot-canary/node_modules/discord.js/src/client/actions/InteractionCreate.js:97:12)
+    at Object.module.exports [as INTERACTION_CREATE] (/home/shaper/문서/shapbot-canary/node_modules/discord.js/src/client/websocket/handlers/INTERACTION_CREATE.js:4:36)
+    at WebSocketManager.handlePacket (/home/shaper/문서/shapbot-canary/node_modules/discord.js/src/client/websocket/WebSocketManager.js:353:31)
+    at WebSocketManager.<anonymous> (/home/shaper/문서/shapbot-canary/node_modules/discord.js/src/client/websocket/WebSocketManager.js:237:12)
+-----------------2023-05-07-38-----------------
+TypeError: Cannot set properties of undefined (setting 'status')
+    at Object.execute (/home/shaper/문서/shapbot-canary/commands/music/list.ts:30:113)
+    at EventEmitter.<anonymous> (/home/shaper/문서/shapbot-canary/modules/common/interactions.ts:256:14)
+    at EventEmitter.emit (/home/shaper/문서/shapbot-canary/node_modules/eventemitter3/index.js:181:35)
+    at exClient.run (/home/shaper/문서/shapbot-canary/events/interactionCreate.ts:21:25)
+    at exClient.emit (node:events:513:28)
+    at exClient.emit (node:domain:489:12)
+    at InteractionCreateAction.handle (/home/shaper/문서/shapbot-canary/node_modules/discord.js/src/client/actions/InteractionCreate.js:97:12)
+    at Object.module.exports [as INTERACTION_CREATE] (/home/shaper/문서/shapbot-canary/node_modules/discord.js/src/client/websocket/handlers/INTERACTION_CREATE.js:4:36)
+    at WebSocketManager.handlePacket (/home/shaper/문서/shapbot-canary/node_modules/discord.js/src/client/websocket/WebSocketManager.js:353:31)
+    at WebSocketManager.<anonymous> (/home/shaper/문서/shapbot-canary/node_modules/discord.js/src/client/websocket/WebSocketManager.js:237:12)
+-----------------2023-05-07-01-----------------
+TypeError: Cannot read properties of undefined (reading 'data')
+    at Object.execute (/home/shaper/문서/shapbot-canary/commands/music/list.ts:34:95)
+    at EventEmitter.<anonymous> (/home/shaper/문서/shapbot-canary/modules/common/interactions.ts:256:14)
+    at EventEmitter.emit (/home/shaper/문서/shapbot-canary/node_modules/eventemitter3/index.js:181:35)
+    at exClient.run (/home/shaper/문서/shapbot-canary/events/interactionCreate.ts:21:25)
+    at exClient.emit (node:events:513:28)
+    at exClient.emit (node:domain:489:12)
+    at InteractionCreateAction.handle (/home/shaper/문서/shapbot-canary/node_modules/discord.js/src/client/actions/InteractionCreate.js:97:12)
+    at Object.module.exports [as INTERACTION_CREATE] (/home/shaper/문서/shapbot-canary/node_modules/discord.js/src/client/websocket/handlers/INTERACTION_CREATE.js:4:36)
+    at WebSocketManager.handlePacket (/home/shaper/문서/shapbot-canary/node_modules/discord.js/src/client/websocket/WebSocketManager.js:353:31)
+    at WebSocketManager.<anonymous> (/home/shaper/문서/shapbot-canary/node_modules/discord.js/src/client/websocket/WebSocketManager.js:237:12)
+-----------------2023-05-07-34-----------------
+TypeError: Cannot read properties of undefined (reading 'embed')
+    at Queue.skip (/home/shaper/문서/shapbot-canary/modules/lavalink/manageQueue.ts:321:96)
+    at Object.execute (/home/shaper/문서/shapbot-canary/commands/music/list.ts:32:60)
+    at EventEmitter.<anonymous> (/home/shaper/문서/shapbot-canary/modules/common/interactions.ts:256:14)
+    at EventEmitter.emit (/home/shaper/문서/shapbot-canary/node_modules/eventemitter3/index.js:181:35)
+    at exClient.run (/home/shaper/문서/shapbot-canary/events/interactionCreate.ts:21:25)
+    at exClient.emit (node:events:513:28)
+    at exClient.emit (node:domain:489:12)
+    at InteractionCreateAction.handle (/home/shaper/문서/shapbot-canary/node_modules/discord.js/src/client/actions/InteractionCreate.js:97:12)
+    at Object.module.exports [as INTERACTION_CREATE] (/home/shaper/문서/shapbot-canary/node_modules/discord.js/src/client/websocket/handlers/INTERACTION_CREATE.js:4:36)
+    at WebSocketManager.handlePacket (/home/shaper/문서/shapbot-canary/node_modules/discord.js/src/client/websocket/WebSocketManager.js:353:31)
+-----------------2023-05-07-36-----------------
+TypeError: Cannot read properties of undefined (reading 'embed')
+    at Object.execute (/home/shaper/문서/shapbot-canary/commands/music/list.ts:33:138)
+    at EventEmitter.<anonymous> (/home/shaper/문서/shapbot-canary/modules/common/interactions.ts:256:14)
+    at EventEmitter.emit (/home/shaper/문서/shapbot-canary/node_modules/eventemitter3/index.js:181:35)
+    at exClient.run (/home/shaper/문서/shapbot-canary/events/interactionCreate.ts:21:25)
+    at exClient.emit (node:events:513:28)
+    at exClient.emit (node:domain:489:12)
+    at InteractionCreateAction.handle (/home/shaper/문서/shapbot-canary/node_modules/discord.js/src/client/actions/InteractionCreate.js:97:12)
+    at Object.module.exports [as INTERACTION_CREATE] (/home/shaper/문서/shapbot-canary/node_modules/discord.js/src/client/websocket/handlers/INTERACTION_CREATE.js:4:36)
+    at WebSocketManager.handlePacket (/home/shaper/문서/shapbot-canary/node_modules/discord.js/src/client/websocket/WebSocketManager.js:353:31)
+    at WebSocketManager.<anonymous> (/home/shaper/문서/shapbot-canary/node_modules/discord.js/src/client/websocket/WebSocketManager.js:237:12)
+-----------------2023-05-07-03-----------------
+TypeError: Cannot set properties of undefined (setting 'status')
+    at normalPlay (/home/shaper/문서/shapbot-canary/modules/lavalink/manageQueue.ts:277:68)
+    at playNext (/home/shaper/문서/shapbot-canary/modules/lavalink/manageQueue.ts:298:25)
+    at Queue.next (/home/shaper/문서/shapbot-canary/modules/lavalink/manageQueue.ts:314:13)
+    at Player.<anonymous> (/home/shaper/문서/shapbot-canary/modules/lavalink/playerEvent.ts:16:32)
+    at Player.emit (node:events:513:28)
+    at Player.emit (node:domain:489:12)
+    at Player.onPlayerEvent (/home/shaper/문서/shapbot-canary/node_modules/shoukaku/src/guild/Player.ts:626:18)
+    at Player.onLavalinkMessage (/home/shaper/문서/shapbot-canary/node_modules/shoukaku/src/guild/Player.ts:608:18)
+    at Node.message (/home/shaper/문서/shapbot-canary/node_modules/shoukaku/src/node/Node.ts:308:41)
+    at WebSocket.<anonymous> (/home/shaper/문서/shapbot-canary/node_modules/shoukaku/src/node/Node.ts:199:44)
+-----------------2023-05-07-42-----------------
+TypeError: Cannot set properties of undefined (setting 'status')
+    at Object.execute (/home/shaper/문서/shapbot-canary/commands/music/list.ts:31:109)
+    at EventEmitter.<anonymous> (/home/shaper/문서/shapbot-canary/modules/common/interactions.ts:256:14)
+    at EventEmitter.emit (/home/shaper/문서/shapbot-canary/node_modules/eventemitter3/index.js:202:33)
+    at exClient.run (/home/shaper/문서/shapbot-canary/events/interactionCreate.ts:21:25)
+    at exClient.emit (node:events:513:28)
+    at exClient.emit (node:domain:489:12)
+    at InteractionCreateAction.handle (/home/shaper/문서/shapbot-canary/node_modules/discord.js/src/client/actions/InteractionCreate.js:97:12)
+    at Object.module.exports [as INTERACTION_CREATE] (/home/shaper/문서/shapbot-canary/node_modules/discord.js/src/client/websocket/handlers/INTERACTION_CREATE.js:4:36)
+    at WebSocketManager.handlePacket (/home/shaper/문서/shapbot-canary/node_modules/discord.js/src/client/websocket/WebSocketManager.js:353:31)
+    at WebSocketManager.<anonymous> (/home/shaper/문서/shapbot-canary/node_modules/discord.js/src/client/websocket/WebSocketManager.js:237:12)
+-----------------2023-05-07-42-----------------
+TypeError: Cannot set properties of undefined (setting 'status')
+    at Object.execute (/home/shaper/문서/shapbot-canary/commands/music/list.ts:30:113)
+    at EventEmitter.<anonymous> (/home/shaper/문서/shapbot-canary/modules/common/interactions.ts:256:14)
+    at EventEmitter.emit (/home/shaper/문서/shapbot-canary/node_modules/eventemitter3/index.js:202:33)
+    at exClient.run (/home/shaper/문서/shapbot-canary/events/interactionCreate.ts:21:25)
+    at exClient.emit (node:events:513:28)
+    at exClient.emit (node:domain:489:12)
+    at InteractionCreateAction.handle (/home/shaper/문서/shapbot-canary/node_modules/discord.js/src/client/actions/InteractionCreate.js:97:12)
+    at Object.module.exports [as INTERACTION_CREATE] (/home/shaper/문서/shapbot-canary/node_modules/discord.js/src/client/websocket/handlers/INTERACTION_CREATE.js:4:36)
+    at WebSocketManager.handlePacket (/home/shaper/문서/shapbot-canary/node_modules/discord.js/src/client/websocket/WebSocketManager.js:353:31)
+    at WebSocketManager.<anonymous> (/home/shaper/문서/shapbot-canary/node_modules/discord.js/src/client/websocket/WebSocketManager.js:237:12)
+-----------------2023-05-07-42-----------------
+TypeError: Cannot set properties of undefined (setting 'status')
+    at normalPlay (/home/shaper/문서/shapbot-canary/modules/lavalink/manageQueue.ts:274:72)
+    at playNext (/home/shaper/문서/shapbot-canary/modules/lavalink/manageQueue.ts:298:25)
+    at Queue.next (/home/shaper/문서/shapbot-canary/modules/lavalink/manageQueue.ts:314:13)
+    at Player.<anonymous> (/home/shaper/문서/shapbot-canary/modules/lavalink/playerEvent.ts:16:32)
+    at Player.emit (node:events:513:28)
+    at Player.emit (node:domain:489:12)
+    at Player.onPlayerEvent (/home/shaper/문서/shapbot-canary/node_modules/shoukaku/src/guild/Player.ts:626:18)
+    at Player.onLavalinkMessage (/home/shaper/문서/shapbot-canary/node_modules/shoukaku/src/guild/Player.ts:608:18)
+    at Node.message (/home/shaper/문서/shapbot-canary/node_modules/shoukaku/src/node/Node.ts:308:41)
+    at WebSocket.<anonymous> (/home/shaper/문서/shapbot-canary/node_modules/shoukaku/src/node/Node.ts:199:44)
+-----------------2023-05-07-42-----------------
+DiscordAPIError[10008]: Unknown Message
+    at handleErrors (/home/shaper/문서/shapbot-canary/node_modules/@discordjs/rest/src/lib/handlers/Shared.ts:152:10)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async SequentialHandler.runRequest (/home/shaper/문서/shapbot-canary/node_modules/@discordjs/rest/src/lib/handlers/SequentialHandler.ts:399:20)
+    at async SequentialHandler.queueRequest (/home/shaper/문서/shapbot-canary/node_modules/@discordjs/rest/src/lib/handlers/SequentialHandler.ts:169:11)
+    at async REST.request (/home/shaper/문서/shapbot-canary/node_modules/@discordjs/rest/src/lib/REST.ts:343:20)
+    at async MessageManager.delete (/home/shaper/문서/shapbot-canary/node_modules/discord.js/src/managers/MessageManager.js:255:5)
+    at async Message.delete (/home/shaper/문서/shapbot-canary/node_modules/discord.js/src/structures/Message.js:816:5)
+-----------------2023-05-08-08-----------------
+TypeError: Cannot set properties of undefined (setting 'status')
+    at Object.execute (/home/shaper/문서/shapbot-canary/commands/music/list.ts:31:113)
+    at EventEmitter.<anonymous> (/home/shaper/문서/shapbot-canary/modules/common/interactions.ts:256:14)
+    at EventEmitter.emit (/home/shaper/문서/shapbot-canary/node_modules/eventemitter3/index.js:202:33)
+    at exClient.run (/home/shaper/문서/shapbot-canary/events/interactionCreate.ts:21:25)
+    at exClient.emit (node:events:513:28)
+    at exClient.emit (node:domain:489:12)
+    at InteractionCreateAction.handle (/home/shaper/문서/shapbot-canary/node_modules/discord.js/src/client/actions/InteractionCreate.js:97:12)
+    at Object.module.exports [as INTERACTION_CREATE] (/home/shaper/문서/shapbot-canary/node_modules/discord.js/src/client/websocket/handlers/INTERACTION_CREATE.js:4:36)
+    at WebSocketManager.handlePacket (/home/shaper/문서/shapbot-canary/node_modules/discord.js/src/client/websocket/WebSocketManager.js:353:31)
+    at WebSocketManager.<anonymous> (/home/shaper/문서/shapbot-canary/node_modules/discord.js/src/client/websocket/WebSocketManager.js:237:12)
+-----------------2023-05-08-08-----------------
+DiscordAPIError[10008]: Unknown Message
+    at handleErrors (/home/shaper/문서/shapbot-canary/node_modules/@discordjs/rest/src/lib/handlers/Shared.ts:152:10)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async SequentialHandler.runRequest (/home/shaper/문서/shapbot-canary/node_modules/@discordjs/rest/src/lib/handlers/SequentialHandler.ts:399:20)
+    at async SequentialHandler.queueRequest (/home/shaper/문서/shapbot-canary/node_modules/@discordjs/rest/src/lib/handlers/SequentialHandler.ts:169:11)
+    at async REST.request (/home/shaper/문서/shapbot-canary/node_modules/@discordjs/rest/src/lib/REST.ts:343:20)
+    at async MessageManager.delete (/home/shaper/문서/shapbot-canary/node_modules/discord.js/src/managers/MessageManager.js:255:5)
+    at async Message.delete (/home/shaper/문서/shapbot-canary/node_modules/discord.js/src/structures/Message.js:816:5)
+-----------------2023-05-08-15-----------------
+TypeError: Cannot set properties of undefined (setting 'status')
+    at Object.execute (/home/shaper/문서/shapbot-canary/commands/music/list.ts:31:113)
+    at EventEmitter.<anonymous> (/home/shaper/문서/shapbot-canary/modules/common/interactions.ts:256:14)
+    at EventEmitter.emit (/home/shaper/문서/shapbot-canary/node_modules/eventemitter3/index.js:202:33)
+    at exClient.run (/home/shaper/문서/shapbot-canary/events/interactionCreate.ts:21:25)
+    at exClient.emit (node:events:513:28)
+    at exClient.emit (node:domain:489:12)
+    at InteractionCreateAction.handle (/home/shaper/문서/shapbot-canary/node_modules/discord.js/src/client/actions/InteractionCreate.js:97:12)
+    at Object.module.exports [as INTERACTION_CREATE] (/home/shaper/문서/shapbot-canary/node_modules/discord.js/src/client/websocket/handlers/INTERACTION_CREATE.js:4:36)
+    at WebSocketManager.handlePacket (/home/shaper/문서/shapbot-canary/node_modules/discord.js/src/client/websocket/WebSocketManager.js:353:31)
+    at WebSocketManager.<anonymous> (/home/shaper/문서/shapbot-canary/node_modules/discord.js/src/client/websocket/WebSocketManager.js:237:12)
+-----------------2023-05-08-15-----------------
+TypeError: Cannot set properties of undefined (setting 'status')
+    at Object.execute (/home/shaper/문서/shapbot-canary/commands/music/list.ts:31:113)
+    at EventEmitter.<anonymous> (/home/shaper/문서/shapbot-canary/modules/common/interactions.ts:256:14)
+    at EventEmitter.emit (/home/shaper/문서/shapbot-canary/node_modules/eventemitter3/index.js:202:33)
+    at exClient.run (/home/shaper/문서/shapbot-canary/events/interactionCreate.ts:21:25)
+    at exClient.emit (node:events:513:28)
+    at exClient.emit (node:domain:489:12)
+    at InteractionCreateAction.handle (/home/shaper/문서/shapbot-canary/node_modules/discord.js/src/client/actions/InteractionCreate.js:97:12)
+    at Object.module.exports [as INTERACTION_CREATE] (/home/shaper/문서/shapbot-canary/node_modules/discord.js/src/client/websocket/handlers/INTERACTION_CREATE.js:4:36)
+    at WebSocketManager.handlePacket (/home/shaper/문서/shapbot-canary/node_modules/discord.js/src/client/websocket/WebSocketManager.js:353:31)
+    at WebSocketManager.<anonymous> (/home/shaper/문서/shapbot-canary/node_modules/discord.js/src/client/websocket/WebSocketManager.js:237:12)
+-----------------2023-05-08-15-----------------
+TypeError: Cannot set properties of undefined (setting 'status')
+    at Object.execute (/home/shaper/문서/shapbot-canary/commands/music/list.ts:31:113)
+    at EventEmitter.<anonymous> (/home/shaper/문서/shapbot-canary/modules/common/interactions.ts:256:14)
+    at EventEmitter.emit (/home/shaper/문서/shapbot-canary/node_modules/eventemitter3/index.js:202:33)
+    at exClient.run (/home/shaper/문서/shapbot-canary/events/interactionCreate.ts:21:25)
+    at exClient.emit (node:events:513:28)
+    at exClient.emit (node:domain:489:12)
+    at InteractionCreateAction.handle (/home/shaper/문서/shapbot-canary/node_modules/discord.js/src/client/actions/InteractionCreate.js:97:12)
+    at Object.module.exports [as INTERACTION_CREATE] (/home/shaper/문서/shapbot-canary/node_modules/discord.js/src/client/websocket/handlers/INTERACTION_CREATE.js:4:36)
+    at WebSocketManager.handlePacket (/home/shaper/문서/shapbot-canary/node_modules/discord.js/src/client/websocket/WebSocketManager.js:353:31)
+    at WebSocketManager.<anonymous> (/home/shaper/문서/shapbot-canary/node_modules/discord.js/src/client/websocket/WebSocketManager.js:237:12)
+-----------------2023-05-08-15-----------------
+DiscordAPIError[10008]: Unknown Message
+    at handleErrors (/home/shaper/문서/shapbot-canary/node_modules/@discordjs/rest/src/lib/handlers/Shared.ts:152:10)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async SequentialHandler.runRequest (/home/shaper/문서/shapbot-canary/node_modules/@discordjs/rest/src/lib/handlers/SequentialHandler.ts:399:20)
+    at async SequentialHandler.queueRequest (/home/shaper/문서/shapbot-canary/node_modules/@discordjs/rest/src/lib/handlers/SequentialHandler.ts:169:11)
+    at async REST.request (/home/shaper/문서/shapbot-canary/node_modules/@discordjs/rest/src/lib/REST.ts:343:20)
+    at async MessageManager.delete (/home/shaper/문서/shapbot-canary/node_modules/discord.js/src/managers/MessageManager.js:255:5)
+    at async Message.delete (/home/shaper/문서/shapbot-canary/node_modules/discord.js/src/structures/Message.js:816:5)
+-----------------2023-05-08-15-----------------
+DiscordAPIError[10008]: Unknown Message
+    at handleErrors (/home/shaper/문서/shapbot-canary/node_modules/@discordjs/rest/src/lib/handlers/Shared.ts:152:10)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async SequentialHandler.runRequest (/home/shaper/문서/shapbot-canary/node_modules/@discordjs/rest/src/lib/handlers/SequentialHandler.ts:399:20)
+    at async SequentialHandler.queueRequest (/home/shaper/문서/shapbot-canary/node_modules/@discordjs/rest/src/lib/handlers/SequentialHandler.ts:169:11)
+    at async REST.request (/home/shaper/문서/shapbot-canary/node_modules/@discordjs/rest/src/lib/REST.ts:343:20)
+    at async MessageManager.delete (/home/shaper/문서/shapbot-canary/node_modules/discord.js/src/managers/MessageManager.js:255:5)
+    at async Message.delete (/home/shaper/문서/shapbot-canary/node_modules/discord.js/src/structures/Message.js:816:5)
