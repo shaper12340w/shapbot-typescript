@@ -77,6 +77,7 @@ export interface playlistOption{
     embed:embType;
     status:number;
 }
+type killOption = () => void;
 export interface queueOption {
     option: {
         sendRoom: string;
@@ -89,7 +90,9 @@ export interface queueOption {
     }
     playList: playlistOption[];
     rowPlaylist:Array<Track>;
+    killList:killOption[];
     player?:Player;
+
 }
 
 export class Queue{
@@ -110,6 +113,7 @@ export class Queue{
             },
             playList:<playlistOption[]>[],
             rowPlaylist:<Track[]>[],
+            killList:<killOption[]>[]
         }
     }
 

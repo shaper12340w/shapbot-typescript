@@ -20,26 +20,31 @@ export default new Command({
                 interaction.reply({embeds:[new EmbedBuilder().setColor(0xdbce39).setTitle(`${interaction.guild!!.name}의 재생목록`).setDescription(`**[현재 재생중]**\n▶️ | ${nowPlaying.name}`)]});
             } else {
                 const musiclist = createStringSelectMenuBuilder({
-                    id:"musiclist",
+                    id:interaction.id,
                     placeholder:"재생할 곡을 골라주세요",
                     options: new Array(toplay.length).fill(null).map((_, i) => {
                         return <APISelectMenuOption>{ label: toplay[i].name, value: String(i) }
                     }),
-                    async execute({ interaction }){
-                        const index = Number(interaction.values[0]);
-                        queue.get(interaction.guildId!!)!!.data.option.playNextOption = false;
-                        queue.get(interaction.guildId!!)!!.data.playList.filter(e=>e.status === 1)[index].status = 3;
-                        queue.get(interaction.guildId!!)!!.data.playList.filter(e=>e.status === 2)[0].status = 0;
-                        queue.get(interaction.guildId!!)!!.data.playList.filter(e=>e.status === 3)[0].status = 2;
-                        const playdata = queue.get(interaction.guildId!!)!!.data.playList.filter(e=>e.status === 2)[0];
-                        queue.get(interaction.guildId!!)!!.data.player?.stopTrack()
-                        queue.get(interaction.guildId!!)!!.data.player?.playTrack({ track:playdata.track })
-                        queue.get(interaction.guildId!!)!!.data.option.playNextOption = true;
-                        await interaction.channel!!.send({embeds:[playdata.embed]})
-                        await sendMessage!!.delete()
+                    async execute({ interaction,kill }) {
+                        try {
+                            const index = Number(interaction.values[0]);
+                            queue.get(interaction.guildId!!)!!.data.option.playNextOption = false;
+                            queue.get(interaction.guildId!!)!!.data.playList.filter(e => e.status === 1)[index].status = 3;
+                            queue.get(interaction.guildId!!)!!.data.playList.filter(e => e.status === 2)[0].status = 0;
+                            queue.get(interaction.guildId!!)!!.data.playList.filter(e => e.status === 3)[0].status = 2;
+                            const playdata = queue.get(interaction.guildId!!)!!.data.playList.filter(e => e.status === 2)[0];
+                            queue.get(interaction.guildId!!)!!.data.player?.stopTrack()
+                            queue.get(interaction.guildId!!)!!.data.player?.playTrack({ track: playdata.track })
+                            queue.get(interaction.guildId!!)!!.data.killList.push(kill);
+                            await interaction.reply({ embeds: [playdata.embed] })
+                            await sendMessage!!.delete();
+                            
+                        } catch (e) {
+                            console.error(e)
+                        }
                     }
                 })
-                sendMessage = await interaction.reply({embeds:[new EmbedBuilder().setColor(0xdbce39).setTitle(`${interaction.guild!!.name}의 재생목록`).setDescription(`**[현재 재생중]**\n▶️ | ${nowPlaying.name}\n\n**[재생목록]**\n${toplay.map((e,i)=>"`"+String(i+1)+"` | "+e.name).join("\n")}`)], components:[musiclist], fetchReply:true }).catch();
+                sendMessage = await interaction.reply({embeds:[new EmbedBuilder().setColor(0xdbce39).setTitle(`${interaction.guild!!.name}의 재생목록`).setDescription(`**[현재 재생중]**\n▶️ | ${nowPlaying.name}\n\n**[재생목록]**\n${toplay.map((e,i)=>"`"+String(i+1)+"` | "+e.name).join("\n")}`)], components:[musiclist], fetchReply:true });
             }
             
         }
