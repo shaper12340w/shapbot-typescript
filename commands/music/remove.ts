@@ -1,6 +1,6 @@
 import { SlashCommandBuilder,CommandInteraction, VoiceBasedChannel, EmbedBuilder, APISelectMenuOption, Message } from 'discord.js';
 import { Command } from '../../structures/Command'
-import { queue } from '../../modules/lavalink/manageQueue';
+import { playlistOption, queue } from '../../modules/lavalink/manageQueue';
 import { createStringSelectMenuBuilder } from '../../modules/common/interactions';
 
 export default new Command({
@@ -25,12 +25,19 @@ export default new Command({
                     }),
                     async execute({ interaction }){
                         const index = Number(interaction.values[0]);
-                        delete queue.get(interaction.guildId!!)!!.data.playList.filter(e=>e.status !== 2)[index];
-                        interaction.channel!!.send("해당 곡이 전체 재생목록에서 제거되었습니다")
+                        const reducedNumbers = queue.get(interaction.guildId!!)!!.data.playList.reduce((acc, num) => {
+                            const name = playlist.filter(e => e.status !== 2)[index];
+                            if (JSON.stringify(num) !== JSON.stringify(name)) {
+                                acc.push(num);
+                            }
+                            return acc;
+                        }, <playlistOption[]>[]);
+                        queue.get(interaction.guildId!!)!!.data.playList = reducedNumbers;
+                        await interaction.channel!!.send("해당 곡이 전체 재생목록에서 제거되었습니다")
                         sendMessage!!.delete();
                     }
                 })
-                sendMessage = await interaction.reply({embeds:[new EmbedBuilder().setColor(0xe01032).setTitle(`재거할 곡을 골라주세요`).setDescription(`**[전체목록]**\n${playlistLeft.map(e=>"`"+(e.status === 1 ? ":green_square:":":red_square:")+"` "+e.name).join("\n")}`).setFooter({text:":green_square:은 대기중인 곡, :red_square:은 이미 재생된 곡"})], components:[musiclist], fetchReply:true })
+                sendMessage = await interaction.reply({embeds:[new EmbedBuilder().setColor(0xe01032).setTitle(`재거할 곡을 골라주세요`).setDescription(`**[전체목록]**\n${playlistLeft.map(e=>"`"+(e.status === 1 ? "🟩":"🟥")+"` "+e.name).join("\n")}`).setFooter({text:"🟩은 대기중인 곡, 🟥은 이미 재생된 곡"})], components:[musiclist], fetchReply:true })
             }
             
         }

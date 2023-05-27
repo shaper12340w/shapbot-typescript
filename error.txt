@@ -851,3 +851,90 @@ DiscordAPIError[10008]: Unknown Message
     at async REST.request (/home/shaper/문서/shapbot-canary/node_modules/@discordjs/rest/src/lib/REST.ts:343:20)
     at async MessageManager.delete (/home/shaper/문서/shapbot-canary/node_modules/discord.js/src/managers/MessageManager.js:255:5)
     at async Message.delete (/home/shaper/문서/shapbot-canary/node_modules/discord.js/src/structures/Message.js:816:5)
+-----------------2023-05-09-05-----------------
+Error [InteractionAlreadyReplied]: The reply to this interaction has already been sent or deferred.
+    at ChatInputCommandInteraction.reply (/home/shaper/문서/shapbot-canary/node_modules/discord.js/src/structures/interfaces/InteractionResponses.js:102:46)
+    at Command.execute (/home/shaper/문서/shapbot-canary/commands/music/play.ts:64:25)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async exClient.run (/home/shaper/문서/shapbot-canary/events/interactionCreate.ts:12:17)
+-----------------2023-05-09-05-----------------
+Error [InteractionAlreadyReplied]: The reply to this interaction has already been sent or deferred.
+    at ChatInputCommandInteraction.reply (/home/shaper/문서/shapbot-canary/node_modules/discord.js/src/structures/interfaces/InteractionResponses.js:102:46)
+    at Command.execute (/home/shaper/문서/shapbot-canary/commands/music/play.ts:64:25)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async exClient.run (/home/shaper/문서/shapbot-canary/events/interactionCreate.ts:12:17)
+-----------------2023-05-09-06-----------------
+Error [InteractionAlreadyReplied]: The reply to this interaction has already been sent or deferred.
+    at ChatInputCommandInteraction.reply (/home/shaper/문서/shapbot-canary/node_modules/discord.js/src/structures/interfaces/InteractionResponses.js:102:46)
+    at Command.execute (/home/shaper/문서/shapbot-canary/commands/music/play.ts:64:25)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async exClient.run (/home/shaper/문서/shapbot-canary/events/interactionCreate.ts:12:17)
+-----------------2023-05-09-17-----------------
+TypeError: Cannot set properties of undefined (setting 'status')
+    at Object.execute (/home/shaper/문서/shapbot-canary/commands/music/list.ts:31:113)
+    at EventEmitter.<anonymous> (/home/shaper/문서/shapbot-canary/modules/common/interactions.ts:256:14)
+    at EventEmitter.emit (/home/shaper/문서/shapbot-canary/node_modules/eventemitter3/index.js:202:33)
+    at exClient.run (/home/shaper/문서/shapbot-canary/events/interactionCreate.ts:21:25)
+    at exClient.emit (node:events:513:28)
+    at exClient.emit (node:domain:489:12)
+    at InteractionCreateAction.handle (/home/shaper/문서/shapbot-canary/node_modules/discord.js/src/client/actions/InteractionCreate.js:97:12)
+    at Object.module.exports [as INTERACTION_CREATE] (/home/shaper/문서/shapbot-canary/node_modules/discord.js/src/client/websocket/handlers/INTERACTION_CREATE.js:4:36)
+    at WebSocketManager.handlePacket (/home/shaper/문서/shapbot-canary/node_modules/discord.js/src/client/websocket/WebSocketManager.js:353:31)
+    at WebSocketManager.<anonymous> (/home/shaper/문서/shapbot-canary/node_modules/discord.js/src/client/websocket/WebSocketManager.js:237:12)
+-----------------2023-05-09-17-----------------
+DiscordAPIError[10008]: Unknown Message
+    at handleErrors (/home/shaper/문서/shapbot-canary/node_modules/@discordjs/rest/src/lib/handlers/Shared.ts:152:10)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async SequentialHandler.runRequest (/home/shaper/문서/shapbot-canary/node_modules/@discordjs/rest/src/lib/handlers/SequentialHandler.ts:399:20)
+    at async SequentialHandler.queueRequest (/home/shaper/문서/shapbot-canary/node_modules/@discordjs/rest/src/lib/handlers/SequentialHandler.ts:169:11)
+    at async REST.request (/home/shaper/문서/shapbot-canary/node_modules/@discordjs/rest/src/lib/REST.ts:343:20)
+    at async MessageManager.delete (/home/shaper/문서/shapbot-canary/node_modules/discord.js/src/managers/MessageManager.js:255:5)
+    at async Message.delete (/home/shaper/문서/shapbot-canary/node_modules/discord.js/src/structures/Message.js:816:5)
+    at async Object.execute (/home/shaper/문서/shapbot-canary/commands/music/list.ts:39:25)
+-----------------2023-05-15-52-----------------
+TypeError: Cannot set properties of undefined (setting 'status')
+    at normalPlay (/home/shaper/문서/shapbot-canary/modules/lavalink/manageQueue.ts:282:68)
+    at playNext (/home/shaper/문서/shapbot-canary/modules/lavalink/manageQueue.ts:294:25)
+    at Queue.next (/home/shaper/문서/shapbot-canary/modules/lavalink/manageQueue.ts:320:13)
+    at queueManager.nextPlay (/home/shaper/문서/shapbot-canary/modules/lavalink/playerEvent.ts:16:32)
+    at Player.<anonymous> (/home/shaper/문서/shapbot-canary/modules/lavalink/playerEvent.ts:30:18)
+    at Player.emit (node:events:513:28)
+    at Player.emit (node:domain:489:12)
+    at Player.onPlayerEvent (/home/shaper/문서/shapbot-canary/node_modules/shoukaku/src/guild/Player.ts:626:18)
+    at Player.onLavalinkMessage (/home/shaper/문서/shapbot-canary/node_modules/shoukaku/src/guild/Player.ts:608:18)
+    at Node.message (/home/shaper/문서/shapbot-canary/node_modules/shoukaku/src/node/Node.ts:308:41)
+-----------------2023-05-26-23-----------------
+TypeError [ERR_INVALID_ARG_TYPE]: The "path" argument must be of type string or an instance of Buffer or URL. Received undefined
+    at rm (node:fs:1252:10)
+    at node:internal/util:377:7
+    at new Promise (<anonymous>)
+    at rm (node:internal/util:363:12)
+    at Object.execute (/home/shaper/문서/shapbot-canary/commands/music/track.ts:108:35)
+    at EventEmitter.<anonymous> (/home/shaper/문서/shapbot-canary/modules/common/interactions.ts:256:14)
+    at EventEmitter.emit (/home/shaper/문서/shapbot-canary/node_modules/eventemitter3/index.js:181:35)
+    at exClient.run (/home/shaper/문서/shapbot-canary/events/interactionCreate.ts:21:25)
+    at exClient.emit (node:events:513:28)
+    at exClient.emit (node:domain:489:12)
+-----------------2023-05-26-59-----------------
+Error: ENOENT: no such file or directory, lstat '457797236458258433.json'
+-----------------2023-05-26-31-----------------
+TypeError: Cannot read properties of undefined (reading 'name')
+    at Object.execute (/home/shaper/문서/shapbot-canary/commands/music/track.ts:109:101)
+    at EventEmitter.<anonymous> (/home/shaper/문서/shapbot-canary/modules/common/interactions.ts:256:14)
+    at EventEmitter.emit (/home/shaper/문서/shapbot-canary/node_modules/eventemitter3/index.js:181:35)
+    at exClient.run (/home/shaper/문서/shapbot-canary/events/interactionCreate.ts:21:25)
+    at exClient.emit (node:events:513:28)
+    at exClient.emit (node:domain:489:12)
+    at InteractionCreateAction.handle (/home/shaper/문서/shapbot-canary/node_modules/discord.js/src/client/actions/InteractionCreate.js:97:12)
+    at Object.module.exports [as INTERACTION_CREATE] (/home/shaper/문서/shapbot-canary/node_modules/discord.js/src/client/websocket/handlers/INTERACTION_CREATE.js:4:36)
+    at WebSocketManager.handlePacket (/home/shaper/문서/shapbot-canary/node_modules/discord.js/src/client/websocket/WebSocketManager.js:353:31)
+    at WebSocketManager.<anonymous> (/home/shaper/문서/shapbot-canary/node_modules/discord.js/src/client/websocket/WebSocketManager.js:237:12)
+-----------------2023-05-27-12-----------------
+DiscordAPIError[10008]: Unknown Message
+    at handleErrors (/home/shaper/문서/shapbot-canary/node_modules/@discordjs/rest/src/lib/handlers/Shared.ts:152:10)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async SequentialHandler.runRequest (/home/shaper/문서/shapbot-canary/node_modules/@discordjs/rest/src/lib/handlers/SequentialHandler.ts:399:20)
+    at async SequentialHandler.queueRequest (/home/shaper/문서/shapbot-canary/node_modules/@discordjs/rest/src/lib/handlers/SequentialHandler.ts:169:11)
+    at async REST.request (/home/shaper/문서/shapbot-canary/node_modules/@discordjs/rest/src/lib/REST.ts:343:20)
+    at async MessageManager.delete (/home/shaper/문서/shapbot-canary/node_modules/discord.js/src/managers/MessageManager.js:255:5)
+    at async Message.delete (/home/shaper/문서/shapbot-canary/node_modules/discord.js/src/structures/Message.js:816:5)

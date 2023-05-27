@@ -36,9 +36,9 @@ export default new Command({
                             queue.get(interaction.guildId!!)!!.data.player?.stopTrack()
                             queue.get(interaction.guildId!!)!!.data.player?.playTrack({ track: playdata.track })
                             queue.get(interaction.guildId!!)!!.data.killList.push(kill);
-                            await interaction.reply({ embeds: [playdata.embed] })
                             await sendMessage!!.delete();
-                            
+                            await interaction.channel!!.send({ embeds: [playdata.embed] })
+                                                   
                         } catch (e) {
                             console.error(e)
                         }

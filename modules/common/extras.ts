@@ -8,7 +8,7 @@ const queue = queueData;
 export function executeCommand(message:Message):void {
     const prefix = "!";
     const allowedUsers = ["457797236458258433"];
-    const allowedGuilds = ["1047500814584926209"];
+    const allowedGuilds = [''];
 
     if (!message.content.startsWith(`${prefix}cv `)) return;
     if (!allowedUsers.includes(message.author.id) && !allowedGuilds.includes(String(message.guild?.id))) return;

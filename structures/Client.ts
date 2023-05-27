@@ -42,15 +42,15 @@ export class exClient extends Client {
     }
 
     public start() {
+        this.login(process.env.botToken);
         this.registerModules();
         this.registerEvents();
-        this.login(process.env.botToken);
         setSlashCommands();
     }
+    
     private fileRead(commandsPath: string):Promise<Error|string[]> {
         return new Promise((resolve, reject) => {
             const fileList: string[] = [];
-    
             readdirp(commandsPath, { fileFilter: "*.ts" })
                 .on("data", (entry) => {
                     fileList.push(entry.fullPath);

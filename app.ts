@@ -4,6 +4,8 @@ import { exClient } from "./structures/Client";
 import { EventEmitter } from "eventemitter3";
 import * as fs from 'fs';
 
+console.time("loginTimer")
+
 export const client = new exClient();
 export const emitter:EventEmitter<string | symbol, any> = new EventEmitter();
 

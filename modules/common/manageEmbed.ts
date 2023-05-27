@@ -38,7 +38,7 @@ export function makeEmbed(title:string,description:string,color:number|colorType
             else colorString = listColor[objkey[color]];
             break;
     }
-    const result = new EmbedBuilder().setTitle(title).setDescription(`${notionString ? notionString+" | " : ""}${description}`).setColor(colorString!!);
+    const result = new EmbedBuilder().setTitle(`${notionString ? notionString+" | " : ""}${title}`).setDescription(description).setColor(colorString!!);
     return result;
 
 }

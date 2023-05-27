@@ -59,7 +59,13 @@ export class CompareVideo extends CompareString{
         accurate += (Math.round(newTrack.info.length/1000) > 3600) ? 1:0
         return accurate;
     }
-    private compareVideoRaw(data1:playdl.VideoOptions,data2:playdl.VideoOptions){
+    /**
+     * 
+     * @param data1 have to modify playdl's index.d.ts 
+     * @param data2 have to modify playdl's index.d.ts
+     * @returns number
+     */
+    private compareVideoRaw(data1:playdl.VideoOptions,data2:playdl.VideoOptions): string | number{
         const checkData1 = Object.keys(data1) ? Object.keys(data1).includes("id") : false;
         const checkData2 = Object.keys(data2) ? Object.keys(data2).includes("id") : false;
         if(checkData1&&checkData2){

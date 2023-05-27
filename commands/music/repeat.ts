@@ -14,7 +14,7 @@ export default new Command({
         if(!queue.get(interaction.guildId!!)){
             interaction.reply({embeds:[new EmbedBuilder().setColor(0xe01032).setTitle(":exclamation: | 음악 재생 중이 아닙니다!")]})
         } else {
-            Buttons.forEach(e=>e())
+            Buttons.forEach(e=>{try{e()}catch(e:unknown){}})
             const status = ['반복 안함','전체 반복','한 곡만'];
             const status2 = ['일반 재생',"셔플"]
             const emojiList = ['▶️','🔁','🔂'];
