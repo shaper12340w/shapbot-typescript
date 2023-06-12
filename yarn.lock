@@ -195,24 +195,7 @@
     rimraf "^2.6.2"
     tar "^4.4.6"
 
-"@tensorflow/tfjs@4.6.0":
-  version "4.6.0"
-  resolved "https://registry.npmjs.org/@tensorflow/tfjs/-/tfjs-4.6.0.tgz"
-  integrity sha512-EWaTljQqo0w7WfbUpTCvWXCigi7/2HVh22NpR8GT875PcQIwimI2nsk7+STYi/Ly/uKTSQuCFcboFTCf8QV32g==
-  dependencies:
-    "@tensorflow/tfjs-backend-cpu" "4.6.0"
-    "@tensorflow/tfjs-backend-webgl" "4.6.0"
-    "@tensorflow/tfjs-converter" "4.6.0"
-    "@tensorflow/tfjs-core" "4.6.0"
-    "@tensorflow/tfjs-data" "4.6.0"
-    "@tensorflow/tfjs-layers" "4.6.0"
-    argparse "^1.0.10"
-    chalk "^4.1.0"
-    core-js "3.29.1"
-    regenerator-runtime "^0.13.5"
-    yargs "^16.0.3"
-
-"@tensorflow/tfjs@^4.6.0":
+"@tensorflow/tfjs@4.6.0", "@tensorflow/tfjs@^4.6.0":
   version "4.6.0"
   resolved "https://registry.yarnpkg.com/@tensorflow/tfjs/-/tfjs-4.6.0.tgz#fb47e050b1ded8c6c008e5ee75e26219d527d5bb"
   integrity sha512-EWaTljQqo0w7WfbUpTCvWXCigi7/2HVh22NpR8GT875PcQIwimI2nsk7+STYi/Ly/uKTSQuCFcboFTCf8QV32g==
