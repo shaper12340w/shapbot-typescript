@@ -24,6 +24,7 @@
     "play-dl": "^1.9.6",
     "readdirp": "^3.6.0",
     "sharp": "^0.32.1",
-    "shoukaku": "^3.4.0"
+    "shoukaku": "^3.4.0",
+    "ytdl-core": "^4.11.4"
   }
 }

@@ -2,7 +2,7 @@ import {client} from "../../app";
 import {LavalinkResponse, Node, Player, Track} from "shoukaku";
 import {secondsToTime} from "../common/extras";
 import {queueManager} from './playerEvent';
-import {ManageVideoInfos} from "./manageVideoInfos";
+import {CompareVideo} from "./compareVideo";
 import {APIEmbed, TextBasedChannel} from "discord.js";
 
 export const queue:Map<string,Queue> = new Map();
@@ -150,8 +150,8 @@ export class Queue{
         try{
             if(!this.data.player) return;
             const newSearch = await this.search(this.data.playList.filter(e=>e.status === 2)[0].url) as Track[];
-            const compareVid = await new ManageVideoInfos().getRecommend(newSearch[0],this.data.playList)
-            const searched = await this.search(compareVid) as Track[];
+            const compareVid = await new CompareVideo().getRecommend(newSearch[0],this.data.playList)
+            const searched = await this.search(compareVid!!) as Track[];
 
             const embData = this.addEmbed(searched[0],2,true);
             this.data.playList.filter(e=>e.status === 2)[0].status = 0;
