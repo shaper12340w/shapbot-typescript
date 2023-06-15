@@ -28,8 +28,11 @@ export class CompareVideo extends CompareString{
         const getInfo = await ytdl.getInfo(track.info.uri);
         const relatedVideos = getInfo.related_videos;
         const result = relatedVideos.find((info:ytdl.relatedVideo)=>{
-            if(!info.isLive&&info.length_seconds!! < matchTime&&info.id !== track.info.identifier)
-                return info
+            if(!info.isLive) //라이브 아님
+                if(info.length_seconds!! < matchTime) //시간 제한
+                    if(info.id !== track.info.identifier) //재생중인 곡과 같은 곡은 X
+                        if(!list.find(e=>e.url.includes(info.id!!))) //재생목록에 있는 곡 X
+                            return info;
         })
         if(result)
             return "https://www.youtube.com/watch?v="+result.id;
