@@ -1,8 +1,8 @@
 import axios, { AxiosRequestConfig } from 'axios';
-import {client} from "../../app";
-import {TextChannel, EmbedBuilder, EmbedFooterOptions, CommandInteraction, Message} from "discord.js"
-import {ImageNSFWCheck} from "./imageNSFWDetect";
-import {predictionType} from "nsfwjs";
+import { client } from "../../app";
+import { TextChannel, EmbedBuilder, EmbedFooterOptions, CommandInteraction, Message } from "discord.js"
+import { ImageNSFWCheck } from "./imageNSFWDetect";
+import { predictionType } from "nsfwjs";
 
 /*
 const dataSample = {
@@ -115,6 +115,7 @@ export interface GenerateServerType{
     userId:string;
     channelId:string;
     messageId?:string;
+    time?:number;
 }
 
 export class ImageGenerate{
@@ -126,6 +127,8 @@ export class ImageGenerate{
                     .setTitle("❌ | 이미 요청하셨습니다")
                     .setColor(0xf15152)
             ]})
+        this.checkQueue();
+        data.time = new Date().getTime();
         this.queue.set(data.userId,data);
 
         const repliedMessage = await interaction.reply({embeds:[
@@ -274,6 +277,14 @@ export class ImageGenerate{
             .setImage(imageData.imgUrl!!)
             .setFooter(<EmbedFooterOptions>{text:"powered by weLim"})
             .setTimestamp()
+    }
+
+    private static checkQueue(){
+        this.queue.forEach(e=>{
+            if((e.time!! - new Date().getTime()) > 60000){
+                this.queue.delete(e.userId)
+            }
+        })
     }
     private static async filterImage(id:string){
         const imgUrl:string = `https://artiva.kr/api/img/filter/${id}`;

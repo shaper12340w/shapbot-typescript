@@ -7,12 +7,17 @@ import {queue} from "../modules/lavalink/manageQueue";
 export default new Event({
     name: "voiceStateUpdate",
     async run(oldState: VoiceState, newState: VoiceState) {
-        const getMemberCount = (channelId: string) => (<VoiceChannel>client.channels.cache.get(channelId)!!).members.size;
-        if (queue.has(newState.guild!!.id)) {
+        const getMember = (channelId: string) => (<VoiceChannel>client.channels.cache.get(channelId)!!);
+        const getClient = await oldState.guild!!.members.fetch(client.user!!.id)!!
+        const getMemberCount = (channelId: string) => getMember(channelId).members.size;
 
-            if (!newState.channel) {
-                if(getMemberCount(queue.get(newState.guild!!.id)!!.data.option.playRoom) === 1){
-                    if(!queue.get(newState.guild!!.id)!!.data.player!!.paused) queue.get(newState.guild!!.id)!!.pause();
+        if (getMember(oldState.channelId!!)) {
+            if (queue.has(oldState.guild!!.id) && getMember(oldState.channelId!!).members.has(client.user!!.id)) {
+
+                if (getMemberCount(oldState.channelId!!) === 1) {
+
+
+                    if (!queue.get(newState.guild!!.id)!!.data.player!!.paused) queue.get(newState.guild!!.id)!!.pause();
                     await (<TextChannel>client.channels.cache.get(queue.get(newState.guild!!.id)!!.data.option.sendRoom)!!)
                         .send({
                             embeds: [{
@@ -21,7 +26,7 @@ export default new Event({
                                 footer: {text: "/pause를 통해 재생!"}
                             }]
                         });
-                    queue.get(newState.guild!!.id)!!.data.timer = setTimeout(()=>{
+                    queue.get(newState.guild!!.id)!!.data.timer = setTimeout(() => {
                         (<TextChannel>client.channels.cache.get(queue.get(newState.guild!!.id)!!.data.option.sendRoom)!!)
                             .send({
                                 embeds: [{
@@ -29,13 +34,17 @@ export default new Event({
                                     title: "⏹️ | 30분동안 아무도 재생하지 않아 자동으로 정지되었습니다",
                                 }]
                             });
-                        if(queue.get(newState.guild!!.id)!!.data.killList) queue.get(newState.guild!!.id)!!.data.killList.forEach(e=>e())
+                        if (queue.get(newState.guild!!.id)!!.data.killList) queue.get(newState.guild!!.id)!!.data.killList.forEach(e => e())
                         queue.get(newState.guild!!.id)!!.stop()
 
-                    },30*60*1000)
+                    }, 30 * 60 * 1000)
+
                 }
-            } else {
-                if(newState.channel!!.members!!.size > 1 && newState.channel!!.members.has(client.user!!.id) && queue.get(newState.guild!!.id)!!.data.timer){
+
+            }
+        } else {
+            if(queue.has(oldState.guild!!.id))
+            if (queue.get(newState.guild!!.id)!!.data.timer) {
                     await (<TextChannel>client.channels.cache.get(queue.get(newState.guild!!.id)!!.data.option.sendRoom)!!)
                         .send({
                             embeds: [{
@@ -47,19 +56,6 @@ export default new Event({
                     clearTimeout(queue.get(newState.guild!!.id)!!.data.timer);
                     queue.get(newState.guild!!.id)!!.data.timer = undefined;
                 }
-                if(oldState.channel)
-                if (oldState.channel!!.id !== newState.channel!!.id && oldState.channel!!.id === queue.get(oldState.guild!!.id)!!.data.option.playRoom) {
-                    await (<TextChannel>client.channels.cache.get(queue.get(newState.guild!!.id)!!.data.option.sendRoom)!!)
-                        .send({
-                            embeds: [{
-                                color: 0xe01032,
-                                title: "❗ | 임의로 방을 바꾸지 마세요",
-                                footer: {text: "에러가 유발될 수 있어 자동중지됨"}
-                            }]
-                        });
-                    queue.get(newState.guild!!.id)!!.stop();
-                }
-            }
         }
     }
 })
