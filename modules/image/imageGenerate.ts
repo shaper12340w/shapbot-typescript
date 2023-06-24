@@ -80,7 +80,7 @@ export const modelList:ModelListType = {
         "type": "anime"
     },
     "CamelliaMix": {
-        "desc": "Icbinp (이닢)",
+        "desc": "CamelliaMix (카멜리아믹스)",
         "type": "realism like anime"
     },
     "HenmixRealV40": {
