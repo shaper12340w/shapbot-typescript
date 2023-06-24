@@ -1,9 +1,9 @@
-import { SlashCommandBuilder, CommandInteraction, CommandInteractionOptionResolver} from 'discord.js';
+import { SlashCommandBuilder, CommandInteraction, CommandInteractionOptionResolver,APIApplicationCommandOptionChoice} from 'discord.js';
 import { Command } from '../../structures/Command'
 import {ImageGenerate, ImageRequestDataType, modelList} from "../../modules/image/imageGenerate";
 
-const reModelList:{name:string;value:string}[] = Object.keys(modelList).map(name=>{
-    return { name: `${modelList[name].desc}`, value: name }
+const reModelList:APIApplicationCommandOptionChoice<string>[] = Object.keys(modelList).map(name=>{
+    return { name: `${modelList[name].desc}`, value: name, description:modelList[name].type }
 })
 export default new Command({
     data: new SlashCommandBuilder()

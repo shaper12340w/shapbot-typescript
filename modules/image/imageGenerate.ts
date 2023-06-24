@@ -47,8 +47,8 @@ export const modelList:ModelListType = {
         "desc": "Absolute Reality (앱솔루트 리얼리티)",
         "type": "normal"
     },
-    "Meinamix": {
-        "desc": "Meinamix (미나믹스)",
+    "MeinaMix": {
+        "desc": "MeinaMix (미나믹스)",
         "type": "anime"
     },
     "Realisticvision": {
@@ -155,10 +155,21 @@ export class ImageGenerate{
             timeout:300000
         })
             .then((result) => {
-                const parsedData:ImageRequestDataType = <ImageRequestDataType>result.data;
-                const keyData:GenerateServerType = { userId:data.userId , channelId:data.channelId, messageId:repliedMessage.id };
+                if(result.data.status == "succeeded"){
+                    const parsedData:ImageRequestDataType = <ImageRequestDataType>result.data;
+                    const keyData:GenerateServerType = { userId:data.userId , channelId:data.channelId, messageId:repliedMessage.id };
+                    this.queue.delete(data.userId);
+                    this.sendMessage(parsedData,keyData);
+                }
+                else if(result.data.status == "censored"){
+                    getChannel.send({embeds:[
+                    new EmbedBuilder()
+                        .setTitle("❌ | 프롬프트가 검열되었습니다")
+                        .setDescription(`\`\`\`해당 프롬프트:${result.data.prompt}\`\`\``)
+                        .setColor(0xf15152)
+                ]})
                 this.queue.delete(data.userId);
-                this.sendMessage(parsedData,keyData);
+                }
             })
             .catch((err) => {
                 getChannel.send({embeds:[
