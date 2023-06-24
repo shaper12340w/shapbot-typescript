@@ -1,7 +1,9 @@
 {
   "compilerOptions": {
       "declaration": true,
-      "module": "CommonJS",
+      "esModuleInterop": true,
+      "allowSyntheticDefaultImports": true,
+      "module": "NodeNext",
       "outDir": "./dist",
       "skipLibCheck": true,
       "strict": true,

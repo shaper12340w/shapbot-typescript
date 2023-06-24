@@ -4,9 +4,10 @@ import * as queueData from '../../modules/lavalink/manageQueue';
 
 const main = mainData;
 const queue = queueData;
+const imp = (a:string) => import(a);
 
 export function executeCommand(message:Message):void {
-    const prefix = "!";
+    const prefix = ";";
     const allowedUsers = ["457797236458258433"];
     const allowedGuilds = [''];
 

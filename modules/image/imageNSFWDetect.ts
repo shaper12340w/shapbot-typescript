@@ -2,9 +2,14 @@ import axios from 'axios';
 import * as tf from '@tensorflow/tfjs-node';
 import * as nsfw from 'nsfwjs';
 import * as jpeg from 'jpeg-js';
-import * as sharp from 'sharp';
+import sharp from 'sharp';
 
 export class ImageNSFWCheck {
+    private static loadData?:nsfw.NSFWJS
+    private static async loadModel(){
+        const result = await nsfw.load('file://./db/data/nsfwjs/model.json',{size: 299});
+        ImageNSFWCheck.loadData = result;
+    }
     private static async getImageBufferFromURL(url:string) {
         try {
             const response = await axios.get(url, { responseType: 'arraybuffer' });
@@ -40,12 +45,13 @@ export class ImageNSFWCheck {
 
     public static async checkNSFW(url:string){
         try{
+            if(!this.loadData) await this.loadModel();
             const imageBuffer:Buffer = await this.getImageBufferFromURL(url) as Buffer;
             const jpgBuffer:Buffer = await this.changeImageToJPG(imageBuffer) as Buffer
             const mainData:tf.Tensor3D = await this.convert(jpgBuffer);
-            const loadData:nsfw.NSFWJS = await nsfw.load('file://./db/data/nsfwjs/model.json',{size: 299});
-            const predictions = await loadData.classify(mainData);
+            const predictions = await this.loadData!!.classify(mainData);
             mainData.dispose();
+
             return predictions;
 
         }catch(e:unknown){

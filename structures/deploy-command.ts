@@ -1,6 +1,6 @@
 import { Routes } from 'discord.js';
 import { REST } from '@discordjs/rest';
-import * as readdirp from "readdirp";
+import readdirp from "readdirp";
 import * as path from "path";
 import { config } from "dotenv";
 config();
@@ -28,7 +28,10 @@ async function setSlashCommands(id?:string | number, option?:string []) {
 
         return new Promise<string []>((resolve, reject) => {
             function readjs(path:string) {
-                readdirp(path, { fileFilter: "*.ts" })
+                readdirp(path, {
+                    fileFilter: ["!*.d.ts","*.ts","*.js"],
+                    type:"files"
+                })
                     .on("data", (entry:entr) => {
                         fileList.push(entry.fullPath);
                     })
@@ -54,7 +57,7 @@ async function setSlashCommands(id?:string | number, option?:string []) {
 
     const commandFiles = await fileRead();
     for (const file of commandFiles) {
-        const command = (await import(file)).default;
+        const command = require(file).default;
         commands.push(command.data.toJSON());
     }
     if(id){

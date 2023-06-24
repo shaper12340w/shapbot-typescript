@@ -27,64 +27,64 @@ interface ModelListType{
     }
 }
 export const modelList:ModelListType = {
-    "midjourney": {
+    "Midjourney": {
         "desc": "Midjourney (미드저니)",
         "type": "normal,landscape,portrait"
     },
-    "anything": {
-        "desc": "Anything (애니띵)",
+    "AnythingV4.5": {
+        "desc": "Anything 4.5 (애니띵 4.5V)",
         "type": "anime"
     },
-    "chilloutmix": {
-        "desc": "ChilloutMix (칠아웃믹스)",
-        "type": "portrait"
-    },
-    "counterfeit": {
-        "desc": "Counterfeith (카운터페이트)",
+    "AnythingV5.0": {
+        "desc": "Anything 5.0 (애니띵 5.0V)",
         "type": "anime"
     },
-    "stablediffusion": {
+    "StableDiffusion": {
         "desc": "Stable Diffusion (스태이블 디퓨전)",
         "type": "normal"
     },
-    "meinamix": {
+    "AbsoluteReality": {
+        "desc": "Absolute Reality (앱솔루트 리얼리티)",
+        "type": "normal"
+    },
+    "Meinamix": {
         "desc": "Meinamix (미나믹스)",
         "type": "anime"
     },
-    "realisticvision": {
+    "Realisticvision": {
         "desc": "Realistic Vision (리얼리스틱 비전)",
         "type": "landscape,realism"
     },
-    "lyriel": {
+    "Lyriel": {
         "desc": "Lyriel (라이렐)",
         "type": "realism like anime"
     },
-    "dreamlikediffusion": {
+    "DreamlikeDiffusion": {
         "desc": "DreamLike Diffusion (드림라익 디퓨전)",
         "type": "normal like anime"
     },
-    "dreamsharper": {
+    "DreamSharper": {
         "desc": "DreamSharper (드림샤퍼)",
         "type": "realism like anime"
     },
-    "revanimated": {
-        "desc": "Revanimated (리배니매이티드)",
+    "RevAnimated": {
+        "desc": "Revanimated (래브애니매이티드)",
         "type": "realism like anime"
     },
-    "abyssorangemix": {
-        "desc": "Abyss Orangemix (어비스 오렌지믹스)",
+    "AbyssOrangeMix2": {
+        "desc": "Abyss Orangemix V2 (어비스 오렌지믹스 V2)",
         "type": "anime"
     },
-    "jafamix": {
-        "desc": "Jafamix (자파믹스)",
+    "AbyssOrangeMix3": {
+        "desc": "Abyss Orangemix V3 (어비스 오렌지믹스 V3)",
         "type": "anime"
     },
-    "icbinp": {
+    "CamelliaMix": {
         "desc": "Icbinp (이닢)",
-        "type": "realism,landscape,portrait"
+        "type": "realism like anime"
     },
-    "mixreal": {
-        "desc": "Mixreal (믹스리얼)",
+    "HenmixRealV40": {
+        "desc": "HenmixReal (핸믹스리얼)",
         "type": "realism,landscape,portrait"
     }
 };
@@ -152,7 +152,7 @@ export class ImageGenerate{
         if(data.negativePrompt) param.negative_prompt = data.negativePrompt;
         return axios.get(mainURL,{
             params:param,
-            timeout:40000
+            timeout:300000
         })
             .then((result) => {
                 const parsedData:ImageRequestDataType = <ImageRequestDataType>result.data;

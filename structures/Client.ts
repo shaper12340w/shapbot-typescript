@@ -9,7 +9,7 @@ import {
 import { LavaManager } from "../modules/lavalink/lavalinkInit"
 import { setSlashCommands } from "./deploy-command";
 import { ManageProperty, serverPropertyDataType } from "./Property"
-import * as readdirp from "readdirp";
+import readdirp from "readdirp";
 import { Shoukaku } from "shoukaku";
 
 export interface CommandData {
@@ -62,14 +62,17 @@ export class exClient extends Client {
     private fileRead(commandsPath: string):Promise<Error|string[]> {
         return new Promise((resolve, reject) => {
             const fileList: string[] = [];
-            readdirp(commandsPath, { fileFilter: ["*.ts","*.js"] })
-                .on("data", (entry) => {
+            readdirp(commandsPath, {
+                fileFilter: ["!*.d.ts","*.ts","*.js"],
+                type:"files"
+            })
+                .on("data", (entry:any) => {
                     fileList.push(entry.fullPath);
                 })
                 .on("error", (err) => {
                     reject(err);
                 })
-                .on("end", () => {
+                .on("end", (err:any) => {
                     if (fileList.length === 0) {
                         reject(new Error("No files found"));
                     } else {
@@ -79,12 +82,12 @@ export class exClient extends Client {
         });
     }
     private async registerCommands(filePath: string) {
-        const commandData = (await import(filePath)).default;
+        const commandData = require(filePath).default;
         this.commands.set(commandData.data.name, commandData);
     }
 
     private async registerMessageCommands(filePath: string) {
-        const commandData = (await import(filePath)).default;
+        const commandData = require(filePath).default;
         this.messageCommands.set(commandData.data.name, commandData);
     }
 
@@ -104,7 +107,7 @@ export class exClient extends Client {
         // Events
         const eventFiles = await this.fileRead("./events") as string[];
         eventFiles.forEach(async file=>{
-            const eventData = (await import(file)).default;
+            const eventData = require(file).default;
             this.on(eventData.name,eventData.run)
         })
     }
