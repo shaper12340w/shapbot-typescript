@@ -1,0 +1,37 @@
+{
+  "name": "untitled",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@tensorflow/tfjs": "^4.9.0",
+    "@tensorflow/tfjs-data": "^4.9.0",
+    "@tensorflow/tfjs-node": "^4.9.0",
+    "axios": "^1.4.0",
+    "canvas": "^2.11.2",
+    "cheerio": "^1.0.0-rc.12",
+    "discord.js": "^14.12.1",
+    "dotenv": "^16.0.3",
+    "eventemitter": "^0.3.3",
+    "eventemitter3": "^5.0.1",
+    "fs": "^0.0.1-security",
+    "jpeg-js": "^0.4.4",
+    "nsfwjs": "^2.4.2",
+    "play-dl": "^1.9.6",
+    "readdirp": "^3.6.0",
+    "seedrandom": "^3.0.5",
+    "sharp": "^0.32.3",
+    "shoukaku": "https://github.com/Deivu/Shoukaku.git",
+    "typescript": "^5.1.6",
+    "ytdl-core": "^4.11.5"
+  },
+  "devDependencies": {
+    "ts-node": "^10.9.1"
+  }
+}
