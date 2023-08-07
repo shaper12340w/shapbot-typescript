@@ -39,18 +39,18 @@ type ServerPropertyTypeList = {
 //----------------user property-----------------//
 
 export type UserPropertyType = {
-    game:{
-        tfze:{
+    game: {
+        tfze: {
             win: number;
             lose: number;
             score: number;
         }
-        fishing:{
+        fishing: {
             win: number;
             lose: number;
             score: number;
         }
-        board:{
+        board: {
             win: number;
             lose: number;
             score: number;
@@ -58,17 +58,17 @@ export type UserPropertyType = {
         money: number;
     },
     level: number;
-    friendship:number;
+    friendship: number;
 }
 
 interface DBUserPropertyType {
     id: string;
-    game_tfze:string;
-    game_fishing:string;
-    game_board:string;
-    game_money:string;
-    level:number;
-    friendship:number;
+    game_tfze: string;
+    game_fishing: string;
+    game_board: string;
+    game_money: string;
+    level: number;
+    friendship: number;
 }
 
 //-----------------------------------------------//
@@ -143,7 +143,7 @@ export class ServerProperty {
         }
     }
 
-    public static async fromJSON(json:ServerPropertyTypeList) {
+    public static async fromJSON(json: ServerPropertyTypeList) {
         const db = new sqlite3.Database(this.SERVER_DATA_PATH);
         db.all(
             `SELECT id FROM serverData`,
@@ -277,9 +277,74 @@ export class ServerProperty {
     }
 
 }
+
 export class UserProperty {
     private static DATA_PATH = "./db/data/database"
     private static USER_DATA_PATH = `${this.DATA_PATH}/user.db`;
+
+    public static async get(id: string) {
+        if (!fs.existsSync(this.USER_DATA_PATH)) {
+            await this.init();
+        }
+        const db = new sqlite3.Database(this.USER_DATA_PATH);
+        const data: DBUserPropertyType | undefined = await new Promise<DBUserPropertyType | undefined>((resolve, reject) => {
+            db.get('SELECT * FROM userData WHERE id = ?', [id], (err, row) => {
+                if (err) {
+                    reject(err);
+                } else {
+                    if (!row)
+                        resolve(undefined)
+                    else
+                        resolve(row as DBUserPropertyType);
+                }
+            });
+        });
+
+        db.close((err) => {
+            if (err) {
+                Logger.error('Error closing the database:', err.message);
+            } else {
+                Logger.info('Database connection closed.');
+            }
+        });
+        if (!data)
+            return undefined;
+        else
+            return {
+                game: {
+                    tfze: JSON.parse(data?.game_tfze || "{}"),
+                    fishing: JSON.parse(data?.game_fishing || "{}"),
+                    board: JSON.parse(data?.game_board || "{}"),
+                    money: data?.game_money || 1000,
+                },
+                level: data?.level || 0,
+                friendship: data?.friendship || 0,
+            };
+    }
+
+    public static async init() {
+        const db = new sqlite3.Database(this.USER_DATA_PATH);
+        db.serialize(() => {
+            db.run(`
+                CREATE TABLE IF NOT EXISTS userData (
+                    id TEXT PRIMARY KEY,
+                    game_tfze TEXT,
+                    game_fishing TEXT,
+                    game_board TEXT,
+                    game_money INTEGER,
+                    level INTEGER,
+                    friendship INTEGER
+                )
+            `);
+        });
+        db.close((err) => {
+            if (err) {
+                Logger.error('Error closing the database:', err.message);
+            } else {
+                Logger.info('Database connection closed.');
+            }
+        });
+    }
 
     public static async set(id: string) {
         const json: UserPropertyType = {
@@ -344,6 +409,8 @@ export class UserProperty {
                 Logger.info('Database connection closed.');
             }
         });
+
+        return json;
     }
 
     public static async save(id: string, data: Nullable<UserPropertyType>) {
