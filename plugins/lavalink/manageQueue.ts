@@ -1,5 +1,15 @@
 import {client} from "../../app";
-import {LavalinkResponse, LoadType, Node, Player, PlaylistResult, SearchResult, Track, TrackResult} from "shoukaku";
+import {
+    Connection,
+    LavalinkResponse,
+    LoadType,
+    Node,
+    Player,
+    PlaylistResult,
+    SearchResult,
+    Track,
+    TrackResult
+} from "shoukaku";
 import {secondsToTime} from "../common/extras";
 import {queueManager} from './playerEvent';
 import {CompareVideo} from "./compareVideo";
@@ -69,7 +79,7 @@ export interface playlistOption {
     name: string;
     track: string;
     embed: APIEmbed;
-    status: number;
+    status: 0|1|2|3;
 }
 
 type killOption = () => void;
@@ -104,6 +114,7 @@ export class Queue {
     public guildId: string;
 
     constructor(channelId: string, guildId: string, voiceChannelId: string) {
+
         this.guildId = guildId;
         this.data = {
             option: {
@@ -125,12 +136,29 @@ export class Queue {
         return !client.shoukaku.players.has(this.guildId);
     }
 
-    private resolveNode(): Node | undefined {
-        return client.shoukaku.getIdealNode();
+    public resolveNode(): Node | undefined {
+        return client.shoukaku.options.nodeResolver(client.shoukaku.nodes,null as unknown as Connection);
     }
 
     public async getTrack(track: string): Promise<Track | undefined> {
         return await this.resolveNode()!!.rest.decode(track);
+    }
+
+    public async playStatusList(){
+        return {
+            playing: {
+                data: this.data.playList.filter(e => e.status === 2)[0],
+                track : await this.getTrack(this.data.playList.filter(e => e.status === 2)[0].track)
+            },
+            ready: {
+                data: this.data.playList.filter(e => e.status === 1),
+                track: await Promise.all(this.data.playList.filter(e => e.status === 1).map(async e=> await this.getTrack(e.track)))
+            },
+            idle: {
+                data: this.data.playList.filter(e => e.status === 0),
+                track: await Promise.all(this.data.playList.filter(e => e.status === 0).map(async e=> await this.getTrack(e.track)))
+            },
+        }
     }
 
     private embedSet(data: embedType, isRecommend?: boolean): APIEmbed {
@@ -146,7 +174,7 @@ export class Queue {
         return newEmbed;
     }
 
-    private addEmbed(metadata: Track, status: number, isRecommend?: boolean): APIEmbed {
+    private addEmbed(metadata: Track, status: 0|1|2|3, isRecommend?: boolean): APIEmbed {
         const emb = this.embedSet({
             name: metadata.info.title,
             videoDuration: secondsToTime(Math.round(metadata.info.length / 1000)),
@@ -212,7 +240,7 @@ export class Queue {
 
     public async play(track: Track): Promise<returnType> {
 
-        if (this.checkPlay()) {
+        if (this.checkPlay()) { // 처음 재생 시
 
             const player = await client.shoukaku.joinVoiceChannel({
                 guildId: this.guildId,
@@ -225,11 +253,11 @@ export class Queue {
             this.data.player = player;
             this.data.rowPlaylist.push(track)
 
-            new queueManager(this).event();
+            await new queueManager(this).init();
             const embData = this.addEmbed(track, 2);
             return {desc: "new", embed: embData, metadata: track};
 
-        } else {
+        } else { // 재생중일 경우
             if (this.data.player!!.paused) {
                 this.skip()
                 this.pause()
@@ -281,8 +309,8 @@ export class Queue {
         return true;
     }
 
-    public async next(): Promise<void> {
-        if (this.data.playList.length === 0) return;
+    public async next(): Promise<boolean> {
+        if (this.data.playList.length === 0) return false;
 
         const lengthCheck1 = (_this: Queue) => _this.data.playList.filter(e => e.status === 1).length <= 0;
         const lengthCheck2 = (_this: Queue) => _this.data.playList.filter(e => e.status === 3).length <= 0;
@@ -302,40 +330,44 @@ export class Queue {
 
         }
 
-        function playNext(_this: Queue): void {
+        function playNext(_this: Queue): boolean {
             switch (_this.data.option.playRepeat) {
                 case 0:
                     if (lengthCheck1(_this) && lengthCheck2(_this)) {
                         _this.stop();
-                        break;
+                        return false;
                     } else {
                         normalPlay(_this);
-                        break;
+                        return true;
                     }
                 case 1:
                     if (lengthCheck1(_this) && lengthCheck2(_this)) {
                         _this.data.playList.forEach(e => e.status = 1);
                         _this.data.playList.filter(e => e.status === 1)[0].status = 2;
                         _this.data.player!!.playTrack({track: _this.data.playList.filter(e => e.status === 2)[0].track});
-                        break;
+                        return true;
                     } else {
                         normalPlay(_this);
-                        break;
+                        return true;
                     }
                 case 2:
                     _this.data.player!!.playTrack({track: _this.data.playList.filter(e => e.status === 2)[0].track});
-                    break;
+                    return true;
+                default:
+                    return false;
             }
         }
 
         if (this.data.option.playRecommend) {
             if (!lengthCheck1(this) || !lengthCheck2(this)) {
-                playNext(this);
+                return playNext(this);
             } else {
                 await this.recommendPlay();
+                return true
             }
         } else {
-            playNext(this);
+            return playNext(this);
+
         }
 
     }

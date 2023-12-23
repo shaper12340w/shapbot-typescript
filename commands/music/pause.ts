@@ -28,6 +28,9 @@ export default new Command({
     interaction: {
         data: new SlashCommandBuilder()
             .setName('pause')
+            .setNameLocalizations({
+                "ko": "일시정지"
+            })
             .setDescription('음악을 일시정지합니다'),
         async execute(interaction: CommandInteraction) {
             await execute_data(interaction);

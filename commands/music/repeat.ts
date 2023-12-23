@@ -65,6 +65,9 @@ export default new Command({
     interaction: {
         data: new SlashCommandBuilder()
             .setName('repeat')
+            .setNameLocalizations({
+                "ko": "반복"
+            })
             .setDescription('곡 반복을 설정합니다'),
         async execute(interaction: CommandInteraction) {
             await execute_data(interaction)

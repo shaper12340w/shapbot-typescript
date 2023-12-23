@@ -131,6 +131,9 @@ export default new Command({
     interaction: {
         data: new SlashCommandBuilder()
             .setName('play')
+            .setNameLocalizations({
+                "ko": "재생",
+            })
             .setDescription('곡을 재생합니다!')
             .addStringOption(option =>
                 option.setName('search_or_link')

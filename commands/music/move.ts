@@ -9,7 +9,7 @@ import {Command} from '../../structures/Command'
 import {queue} from '../../plugins/lavalink/manageQueue';
 import {convertTimeToSeconds} from '../../plugins/common/extras';
 import {client} from '../../app';
-import {Track} from 'shoukaku';
+import {Connection, Track} from 'shoukaku';
 
 
 async function execute_data(interaction: CommandInteraction | Message,content:string) {
@@ -30,7 +30,7 @@ async function execute_data(interaction: CommandInteraction | Message,content:st
             return new Promise<Track["info"]>(
                 (resolve: (result: Track["info"]) => void,
                  reject: (reason: unknown) => void) => {
-                    client.shoukaku.getIdealNode()!!.rest.decode(queue.get(interaction.guildId!!)!!.data.player!!.track!!)!!.then((e) => resolve(<Track["info"]>JSON.parse(JSON.stringify(e!!)))).catch(e => reject(e));
+                    client.shoukaku.options.nodeResolver(client.shoukaku.nodes,null as unknown as Connection)!!.rest.decode(queue.get(interaction.guildId!!)!!.data.player!!.track!!)!!.then((e) => resolve(<Track["info"]>JSON.parse(JSON.stringify(e!!)))).catch(e => reject(e));
                 })
         })());
 
@@ -63,6 +63,9 @@ export default new Command({
     interaction: {
         data: new SlashCommandBuilder()
             .setName('move')
+            .setNameLocalizations({
+                "ko": "이동"
+            })
             .setDescription('해당 동영상의 시간으로 이동합니다')
             .addStringOption(option =>
                 option.setName('time')

@@ -200,6 +200,9 @@ export default new Command({
     interaction: {
         data: new SlashCommandBuilder()
             .setName('track')
+            .setNameLocalizations({
+                "ko": "트랙",
+            })
             .setDescription('재생목록 설정'),
         async execute(interaction) {
             await new exec_data(interaction).send();

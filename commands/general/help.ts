@@ -11,6 +11,9 @@ export default new Command({
     interaction: {
         data: new SlashCommandBuilder()
             .setName('help')
+            .setNameLocalizations({
+                "ko": "도움말"
+            })
             .setDescription('도움말'),
         async execute(interaction: CommandInteraction) {
             await interaction.reply({

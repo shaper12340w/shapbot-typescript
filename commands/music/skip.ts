@@ -22,6 +22,9 @@ export default new Command({
     interaction: {
         data: new SlashCommandBuilder()
             .setName('skip')
+            .setNameLocalizations({
+                "ko": "스킵"
+            })
             .setDescription('음악을 스킵합니다'),
         async execute(interaction: CommandInteraction) {
             await execute_data(interaction)

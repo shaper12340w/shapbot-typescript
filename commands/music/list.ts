@@ -79,14 +79,14 @@ async function list_command(interaction: CommandInteraction | Message) {
                 }).options({
                     embeds: [_embedList[0]],
                 }).on("pageUpdate", (message: Message, org: number, idx: number) => {
-                    Logger.debug("List 에서 업데이트됨"+message.id)
+                    Logger.debug("List 에서 업데이트됨" + message.id)
                     message.edit({
                         embeds: [_embedList[idx - 1]],
                     })
                     listMessage.edit({components: [musiclist[idx - 1]]})
                 })
                 const repliedMessage = await listButton.send(interaction);
-                const listMessage = await interaction.channel!!.send({components:[musiclist[0]]})
+                const listMessage = await interaction.channel!!.send({components: [musiclist[0]]})
             }
         }
     }
@@ -96,6 +96,9 @@ export default new Command({
         interaction: {
             data: new SlashCommandBuilder()
                 .setName('list')
+                .setNameLocalizations({
+                    "ko": "재생목록"
+                })
                 .setDescription('곡 목록'),
             async execute(interaction: CommandInteraction) {
                 await list_command(interaction);

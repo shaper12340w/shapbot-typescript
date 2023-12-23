@@ -2,11 +2,13 @@ import axios from "axios";
 import {CreateGenerationRequest, GenerationResponse} from "./types/GenerationTypes";
 import {UpscaleResponse, UpscaleType} from "./types/ImageUpscaleTypes";
 import {ImageToImageRequest} from "./types/ImageToImageTypes";
+import {LoRAResponse} from "./types/InfoLoRATypes";
+import {Logger} from "../common/logger";
 
-const ARTIVA_URL = `https://artiva.kr`;
+export const ARTIVA_URL = `https://api.artiva.kr`;
 
 /**
- * Them main artiva class, this class should be viewed as the instance of an API key
+ * Theme main artiva class, this class should be viewed as the instance of an API key
  */
 export class Artiva {
 
@@ -23,7 +25,7 @@ export class Artiva {
     public generateText2Image(generationRequest: CreateGenerationRequest): Promise<GenerationResponse> {
         return new Promise(async (_r, _e) => {
             try {
-                const response = await axios.post(`${ARTIVA_URL}/api/img/t2i`, generationRequest, {
+                const response = await axios.post(`${ARTIVA_URL}/api/generate/txt2img`, generationRequest, {
                     headers: {
                         "artiva-api-key": this._apiKey
                     },
@@ -39,11 +41,14 @@ export class Artiva {
             }
         })
     }
-
+    /**
+     * Generate an image from a image with text prompt
+     * @param generationRequest The generation parameters for the request
+     */
     public generateImage2Image(generationRequest: ImageToImageRequest): Promise<GenerationResponse> {
         return new Promise(async (_r, _e) => {
             try {
-                const response = await axios.post(`${ARTIVA_URL}/api/img/i2i`, generationRequest, {
+                const response = await axios.post(`${ARTIVA_URL}/api/generate/img2img`, generationRequest, {
                     headers: {
                         'artiva-api-key': this._apiKey,
                         'Content-Type': 'application/json'
@@ -68,7 +73,7 @@ export class Artiva {
      */
     public imageUpscale(id: String, type: UpscaleType): Promise<UpscaleResponse> {
         return new Promise(async (_r, _e) => {
-            const response = await axios.post(`${ARTIVA_URL}/api/img/upscale`, {
+            const response = await axios.post(`${ARTIVA_URL}/api/upscale`, {
                 id: id,
                 type: type
             }, {
@@ -83,4 +88,37 @@ export class Artiva {
             return _r(responseJSON as UpscaleResponse);
         })
     }
+
+    /**
+     * Get Lora infos from a search
+     * @param search
+     */
+    public static getLora(search:string):Promise<LoRAResponse[]>{
+        return new Promise(async (_r, _e) => {
+            try{
+                const response = await axios.get(`${ARTIVA_URL}/api/lora?name=${search}`)
+                if (response.status != 200) {
+                    return _e(new Error(`Api responded with ${response.status} ${response.statusText}`))
+                }
+                const responseJSON = await response.data;
+                return _r(responseJSON as LoRAResponse[]);
+            } catch (e) {
+                return _e(e);
+            }
+        })
+    }
+
+    public static getLoraImage(url:string):Promise<string>{
+        const id = url.split("/").pop();
+        return new Promise(async (_r, _e) => {
+            const response = await axios.get(`https://civitai.com/api/v1/model-versions/${id}`);
+            if (response.status != 200) {
+                return _e(new Error(`Api responded with ${response.status} ${response.statusText}`))
+            }
+            const url = response.data.images[0].url
+            return _r(url as string);
+        })
+    }
+
+
 }

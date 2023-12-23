@@ -53,6 +53,9 @@ export default new Command({
     interaction: {
         data: new SlashCommandBuilder()
             .setName('draw')
+            .setNameLocalizations({
+                "ko": "그리기"
+            })
             .setDescription('이미지를 생성합니다')
             .addStringOption(option =>
                 option.setName('model')

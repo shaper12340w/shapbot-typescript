@@ -5,6 +5,9 @@ export default new Command({
     interaction: {
         data: new SlashCommandBuilder()
             .setName('ping')
+            .setNameLocalizations({
+                "ko": "핑"
+            })
             .setDescription('Replies with Pong!'),
         async execute(interaction: CommandInteraction) {
             await interaction.reply('Pong!');

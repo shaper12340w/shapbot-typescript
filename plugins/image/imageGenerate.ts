@@ -11,7 +11,7 @@ import {
 import {ImageNSFWCheck} from "./imageNSFWDetect";
 import {predictionType} from "nsfwjs";
 import {Logger} from "../common/logger";
-import {Artiva} from "./Artiva";
+import {Artiva,ARTIVA_URL} from "./Artiva";
 import {ArtivaModel, AspectRatio, JobStatus, Sampler} from "./types/GeneralTypes"
 import {UpscaleType} from "./types/ImageUpscaleTypes"
 import {CreateGenerationRequest, GenerationResponse} from "./types/GenerationTypes";
@@ -196,7 +196,7 @@ export class ImageGenerate{
             .addFields(
                 { name:"모델명", value:imageData.params!!.model, inline:true},
                 { name:"NSFW", value:`${(nsfwNumber*100).toFixed(1)}%`, inline:true},
-                { name:"링크", value:`[정보](https://artiva.kr/exif/${imageData.id}), [다운로드](${imageData.imgUrl!!.replace(/\/static\//,"/download/")})`, inline:true }
+                { name:"링크", value:`[정보](${ARTIVA_URL}/exif/${imageData.id}), [다운로드](${imageData.imgUrl!!.replace(/\/static\//,"/download/")})`, inline:true }
             )
             .setImage(imageData.imgUrl!!)
             .setFooter(<EmbedFooterOptions>{text:"powered by weLim"})

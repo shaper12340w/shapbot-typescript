@@ -6,6 +6,9 @@ export default new Command({
     interaction: {
         data: new SlashCommandBuilder()
             .setName('playing')
+            .setNameLocalizations({
+                "ko": "듣는곡",
+            })
             .setDescription('현재 재생중인 곡'),
         async execute(interaction: CommandInteraction) {
             if (!queue.get(interaction.guildId!!)) {

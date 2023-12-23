@@ -4,6 +4,7 @@ import {exClient} from "./Client";
 import {client} from "../app";
 import {Logger} from "../plugins/common/logger";
 import {Guild} from "discord.js";
+import {isJSON} from "../plugins/common/extras";
 
 import * as sqlite3 from "sqlite3";
 
@@ -15,8 +16,11 @@ type Nullable<T> = {
 //----------------server property-----------------//
 
 export type ServerPropertyType = {
+    id: string;
+    name: string;
     player: {
-        volume: string;
+        volume?: string;
+        lyrics?: boolean;
     }
     administrator?: string[];
     prefix: string;
@@ -26,7 +30,11 @@ export type ServerPropertyType = {
 
 interface DBServerPropertyType {
     id: string;
-    player_volume: string;
+    name: string;
+    player: {
+        volume?: number;
+        lyrics?: boolean;
+    };
     prefix: string;
     notice: string;
     inviteRoom: string;
@@ -94,6 +102,11 @@ export class ServerProperty {
                         Logger.error("row is null");
                         reject("row is null");
                     } else {
+                        Object.keys(row).forEach(key => {
+                            if(isJSON(row[key as keyof DBServerPropertyType])){
+                                row[key as keyof DBServerPropertyType] = JSON.parse(row[key as keyof DBServerPropertyType] as string)
+                            }
+                        })
                         resolve(row);
                         db.close((closeErr) => {
                             if (closeErr) {
@@ -128,14 +141,13 @@ export class ServerProperty {
                                 this.set(row.id); // 데이터가 없는 경우만 저장
                             }
                         });
-                        Logger.debug(rows);
                     }
                     db.close((err) => {
                         if (err) {
                             Logger.error('Error closing the database:', err.message);
                         } else {
                             Logger.info("Property loaded");
-                            Logger.info('Database connection closed.');
+                            Logger.debug('Database connection closed.');
                         }
                     });
                 }
@@ -156,8 +168,9 @@ export class ServerProperty {
                         if (!idList.includes(key)) {
                             this.set(key); // 데이터가 없는 경우만 저장
                         } else {
-                            Logger.warn(`${key} is already exist`);
+                            Logger.warn(`${key} is already exist. Overwriting...`);
                             Logger.debug(json[key]);
+                            if(json[key].name === undefined) json[key].name = client.guilds.cache.get(key)!!.name;
                             this.save(key, json[key]);
                         }
                     });
@@ -167,7 +180,7 @@ export class ServerProperty {
                         Logger.error('Error closing the database:', err.message);
                     } else {
                         Logger.info("Successfully loaded from JSON");
-                        Logger.info('Database connection closed.');
+                        Logger.debug('Database connection closed.');
                     }
                 });
             }
@@ -179,8 +192,11 @@ export class ServerProperty {
             data // data가 있으면 data를, 없으면 기본값을 사용
             ??
             {
+                id: id,
+                name: '',
                 player: {
-                    volume: "100"
+                    volume: "100",
+                    lyrics: false
                 },
                 prefix: "!",
                 notice: '',
@@ -194,7 +210,8 @@ export class ServerProperty {
             db.run(`
                 CREATE TABLE IF NOT EXISTS serverData (
                     id TEXT PRIMARY KEY,
-                    player_volume TEXT,
+                    name TEXT,
+                    player TEXT,
                     prefix TEXT,
                     notice TEXT,
                     inviteRoom TEXT
@@ -204,13 +221,14 @@ export class ServerProperty {
             db.run(`
                 INSERT INTO serverData (
                     id,
-                    player_volume,
+                    name,
+                    player,
                     prefix,
                     notice,
                     inviteRoom
-                ) VALUES (?, ?, ?, ?, ?)
+                ) VALUES (?, ?, ?, ?, ?, ?)
                 `,
-                [id, json.player.volume, json.prefix, json.notice, json.inviteRoom]
+                [id, client.guilds.cache.get(id)!!.name ,JSON.stringify(json.player), json.prefix, json.notice, json.inviteRoom]
             );
         });
 
@@ -219,7 +237,7 @@ export class ServerProperty {
             if (err) {
                 Logger.error('Error closing the database:', err.message);
             } else {
-                Logger.info('Database connection closed.');
+                Logger.debug('Database connection closed.');
             }
         });
     }
@@ -242,23 +260,25 @@ export class ServerProperty {
         if (!existingData) {
             db.run(
                 `
-                INSERT INTO serverData (id, player_volume, prefix, notice, inviteRoom)
-                VALUES (?, ?, ?, ?, ?)
+                INSERT INTO serverData (id, name, player, prefix, notice, inviteRoom)
+                VALUES (?, ?, ?, ?, ?, ?)
                 `,
-                [id, data.player?.volume, data.prefix, data.notice, data.inviteRoom]
+                [id, data.name, JSON.stringify(data.player), data.prefix, data.notice, data.inviteRoom]
             );
         } else {
             db.run(
                 `
                 UPDATE serverData SET
-                    player_volume = ?,
+                    name = ?,
+                    player = ?,
                     prefix = ?,
                     notice = ?,
                     inviteRoom = ?
                 WHERE id = ?
                 `,
                 [
-                    data.player?.volume || existingData.player.volume,
+                    data.name || existingData.name,
+                    JSON.stringify(data.player) || JSON.stringify(existingData.player),
                     data.prefix || existingData.prefix,
                     data.notice || existingData.notice,
                     data.inviteRoom || existingData.inviteRoom,
@@ -271,7 +291,7 @@ export class ServerProperty {
             if (err) {
                 Logger.error('Error closing the database:', err.message);
             } else {
-                Logger.info('Database connection closed.');
+                Logger.debug('Database connection closed.');
             }
         });
     }
@@ -304,7 +324,7 @@ export class UserProperty {
             if (err) {
                 Logger.error('Error closing the database:', err.message);
             } else {
-                Logger.info('Database connection closed.');
+                Logger.debug('Database connection closed.');
             }
         });
         if (!data)
@@ -341,12 +361,15 @@ export class UserProperty {
             if (err) {
                 Logger.error('Error closing the database:', err.message);
             } else {
-                Logger.info('Database connection closed.');
+                Logger.debug('Database connection closed.');
             }
         });
     }
 
     public static async set(id: string) {
+        if (!fs.existsSync(this.USER_DATA_PATH)) {
+            await this.init();
+        }
         const json: UserPropertyType = {
             game: {
                 tfze: {
@@ -406,7 +429,7 @@ export class UserProperty {
             if (err) {
                 Logger.error('Error closing the database:', err.message);
             } else {
-                Logger.info('Database connection closed.');
+                Logger.debug('Database connection closed.');
             }
         });
 
@@ -463,7 +486,7 @@ export class UserProperty {
             if (err) {
                 Logger.error('Error closing the database:', err.message);
             } else {
-                Logger.info('Database connection closed.');
+                Logger.debug('Database connection closed.');
             }
         });
     }

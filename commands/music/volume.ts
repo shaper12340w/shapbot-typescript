@@ -45,6 +45,9 @@ export default new Command({
         data: new SlashCommandBuilder()
             .setName('volume')
             .setDescription('재생중인 곡의 볼륨을 정합니다')
+            .setNameLocalizations({
+                "ko": "볼륨"
+            })
             .addStringOption(option =>
                 option.setName('volume')
                     .setDescription('볼륨(숫자만)')),

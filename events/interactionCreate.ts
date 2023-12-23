@@ -8,12 +8,15 @@ export default new Event({
     async run(interaction: Interaction) {
         const commandName = (<ChatInputCommandInteraction>interaction).commandName;
         const command = client.commands.get(commandName);
+        const commonCommand = client.commonCommands.get(commandName);
         try {
 
             Logger.debug("interaction Create 에서 옴 "+(interaction as MessageComponentInteraction).customId)
             if (interaction.isChatInputCommand()) {
-                if (!command) return;
-                await command.execute(interaction);
+                if (command?.execute)
+                    await command.execute!!(interaction);
+                if(commonCommand)
+                    await commonCommand(interaction);
             }
             if(interaction.isAutocomplete()){
                 if (!command) return;

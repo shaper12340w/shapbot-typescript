@@ -17,13 +17,14 @@ import {Logger} from "../plugins/common/logger";
 export interface CommandData {
     interaction: {
         data: SharedNameAndDescription | SharedSlashCommandOptions;
-        execute: (interaction: CommandInteraction) => any;
+        execute?: (interaction: CommandInteraction) => any;
         autocomplete?: (interaction: AutocompleteInteraction) => any;
     };
     message: {
         data: MCData;
-        execute: (message: Message, args: string, options?: string) => any;
+        execute?: (message: Message, args: string, options?: string) => any;
     };
+    execute?: (message: Message|CommandInteraction, args?: string, options?: string) => any;
 
 }
 
@@ -41,6 +42,7 @@ export interface EventData {
 export class exClient extends Client {
     public commands: Collection<string, CommandData["interaction"]> = new Collection();
     public messageCommands: Collection<string, CommandData["message"]> = new Collection();
+    public commonCommands: Collection<string, CommandData["execute"]> = new Collection();
     public serverProperty: Map<string, ServerPropertyType> = new Map();
     public shoukaku: Shoukaku = new LavaManager(this).initShoukaku();
 
@@ -52,6 +54,8 @@ export class exClient extends Client {
                 GatewayIntentBits.GuildMembers,
                 GatewayIntentBits.GuildVoiceStates,
                 GatewayIntentBits.GuildMessages,
+                GatewayIntentBits.GuildMessageReactions,
+                GatewayIntentBits.GuildPresences,
                 GatewayIntentBits.MessageContent
             ]
         });
@@ -59,10 +63,10 @@ export class exClient extends Client {
 
     public async start() {
         await this.login(process.env.botToken);
+        await this.loadProperties();
         await this.registerModules();
         await this.registerEvents();
         await setSlashCommands();
-        await this.loadProperties();
     }
 
     private fileRead(commandsPath: string): Promise<Error | string[]> {
@@ -89,12 +93,17 @@ export class exClient extends Client {
     }
 
     private async loadProperties() {
+        Logger.info("Loading properties...");
         try {
+            Logger.info("Loading properties from backup...");
             const jsonList = readdirSync('./db/backup');
             if (jsonList.includes("serverProperty.json")) {
                 const json = require(`../db/backup/serverProperty.json`);
                 await ServerProperty.load(this);
                 await ServerProperty.fromJSON(json);
+            } else {
+                Logger.warn("No backup found, loading from default...");
+                await ServerProperty.load(this);
             }
         } catch (e) {
             Logger.error(e);
@@ -106,6 +115,8 @@ export class exClient extends Client {
         const commandData = require(filePath).default;
         this.commands.set(commandData.interaction.data.name, commandData.interaction);
         this.messageCommands.set(commandData.message.data.name, commandData.message);
+        this.commonCommands.set(commandData.interaction.data.name, commandData.execute);
+        Logger.debug(`[ Loaded Command : ${commandData.interaction.data.name} ]`,`Executes : [ Interaction : ${Boolean(commandData.interaction.execute)} | Message : ${Boolean(commandData.message.execute)} | Common : ${Boolean(commandData.execute)} ]`)
     }
 
     private async registerModules() {

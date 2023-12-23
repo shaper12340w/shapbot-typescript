@@ -86,3 +86,12 @@ export function hexToRgba(hex:string, alpha:number):string {
     const b = parseInt(hex.substring(5, 7), 16);
     return `rgba(${r}, ${g}, ${b}, ${alpha})`;
 }
+
+export function isJSON(value:any) {
+    try {
+        JSON.parse(value);
+        return true;
+    } catch (e) {
+        return false;
+    }
+}

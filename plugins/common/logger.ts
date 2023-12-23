@@ -35,7 +35,7 @@ export class Logger {
                     return util.inspect(e);
             }
             const currentTime = getToday() + " "
-            const logString = (type?: string) => (type ? `[${type}]` : "") + currentTime + (str() + "\n").replace(/\n/g, `\n${(type ? `[${type}]` : "")}${currentTime}`);
+            const logString = (type?: string) => (type ? `[${type}]` : "") + currentTime + str().replace(/\n/g, `\n${(type ? `[${type}]` : "")}${currentTime}`);
             this.saveFile(logString(type), type);
             return logString(type);
         }).join("\n")

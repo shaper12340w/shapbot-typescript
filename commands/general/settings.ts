@@ -198,6 +198,9 @@ export default new Command({
     interaction: {
         data: new SlashCommandBuilder()
             .setName('settings')
+            .setNameLocalizations({
+                "ko": "설정"
+            })
             .setDescription('서버 봇 설정'),
 
         async execute(interaction: CommandInteraction) {

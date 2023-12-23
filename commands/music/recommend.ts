@@ -36,6 +36,9 @@ export default new Command({
     interaction: {
         data: new SlashCommandBuilder()
             .setName('recommend')
+            .setNameLocalizations({
+                "ko": "추천곡"
+            })
             .setDescription('추천 곡을 재생합니다'),
         async execute(interaction: CommandInteraction) {
             await execute_data(interaction)

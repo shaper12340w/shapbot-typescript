@@ -71,7 +71,10 @@ export default new Command({
     interaction: {
         data: new SlashCommandBuilder()
             .setName('remove')
-            .setDescription('곡 목록'),
+            .setNameLocalizations({
+                "ko": "제거"
+            })
+            .setDescription('재생목록에서 곡을 제거합니다'),
         async execute(interaction: CommandInteraction) {
             await execute_data(interaction)
         }

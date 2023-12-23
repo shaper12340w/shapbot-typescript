@@ -3,8 +3,7 @@ import { exClient } from "./structures/Client";
 import { EventEmitter } from "eventemitter3";
 import { Logger } from "./plugins/common/logger";
 
-console.time("loginTimer")
-
+export const startTime = process.hrtime();
 export const client = new exClient();
 export const emitter:EventEmitter<string | symbol, any> = new EventEmitter();
 
